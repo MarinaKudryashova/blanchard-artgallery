@@ -63,7 +63,7 @@ document.addEventListener ('DOMContentLoaded', () => {
   let menuDropdownClose = function() {
     menuBtn.forEach(btn => {
       btn.classList.remove('is-open');
-      btn.setAttribute('aria-label','Открыть меню');
+      btn.setAttribute('aria-label','Открыть список художников направления');
       btn.setAttribute('aria-expanded', false);
     });
     dropList.forEach(list => {
@@ -82,7 +82,7 @@ document.addEventListener ('DOMContentLoaded', () => {
 
           //TODO дальше много повторяется
           btn.classList.remove('is-open');
-          btn.setAttribute('aria-label','Открыть меню');
+          btn.setAttribute('aria-label','Открыть список художников направления');
           btn.setAttribute('aria-expanded', false);
         };
       });
@@ -96,10 +96,10 @@ document.addEventListener ('DOMContentLoaded', () => {
       currentBtn.classList.toggle('is-open');
       // меняем атрибуты доступности открыто\закрыто
       if(currentBtn.classList.contains('is-open')) {
-        currentBtn.setAttribute('aria-label', 'Закрыть меню');
+        currentBtn.setAttribute('aria-label', 'Закрыть список художников направления');
         currentBtn.setAttribute('aria-expanded', true);
       } else {
-        currentBtn.setAttribute('aria-label','Открыть меню');
+        currentBtn.setAttribute('aria-label','Открыть список художников направления');
         currentBtn.setAttribute('aria-expanded', false);
       };
       currentList.classList.toggle('is-open');
@@ -157,64 +157,64 @@ btnSearchClose.addEventListener('click', function() {
 
 // });
 
-// иницилизация slider-swiper
-const promoSlider = new Swiper(".promo-swiper", {
-  loop: true,
-  slideClass: 'promo-swiper__slide',
-  wrapperClass: 'promo-swiper__wrapper',
-  speed: 2000,
-  autoplay: {
-    delay: 2000,
-  },
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-});
-const gallerySlider = new Swiper(".gallery-swiper", {
-  slideClass: 'gallery-swiper__slide',
-  wrapperClass: 'gallery-swiper__wrapper',
-  navigation: {
-    nextEl: '.gallery-swiper__btn-next',
-    prevEl: '.gallery-swiper__btn-prev',
-  },
-  pagination: {
-    el: '.gallery-swiper__pagination',
-    type: 'fraction',
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 15,
-    },
-    // when window width is >= 567px
-    576: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 15,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 38,
-    },
-    // when window width is >= 992px
-    1024: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 34
-    },
-    // when window width is >= 992px
-    1200: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 50,
-    },
-  }
-});
+// // иницилизация slider-swiper
+// const promoSlider = new Swiper(".promo-swiper", {
+//   loop: true,
+//   slideClass: 'promo-swiper__slide',
+//   wrapperClass: 'promo-swiper__wrapper',
+//   speed: 2000,
+//   autoplay: {
+//     delay: 2000,
+//   },
+//   effect: 'fade',
+//   fadeEffect: {
+//     crossFade: true,
+//   },
+// });
+// const gallerySlider = new Swiper(".gallery-swiper", {
+//   slideClass: 'gallery-swiper__slide',
+//   wrapperClass: 'gallery-swiper__wrapper',
+//   navigation: {
+//     nextEl: '.gallery-swiper__btn-next',
+//     prevEl: '.gallery-swiper__btn-prev',
+//   },
+//   pagination: {
+//     el: '.gallery-swiper__pagination',
+//     type: 'fraction',
+//   },
+//   breakpoints: {
+//     // when window width is >= 320px
+//     320: {
+//       slidesPerView: 1,
+//       slidesPerGroup: 1,
+//       spaceBetween: 15,
+//     },
+//     // when window width is >= 567px
+//     576: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 15,
+//     },
+//     // when window width is >= 768px
+//     768: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 38,
+//     },
+//     // when window width is >= 992px
+//     1024: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 34
+//     },
+//     // when window width is >= 992px
+//     1200: {
+//       slidesPerView: 3,
+//       slidesPerGroup: 3,
+//       spaceBetween: 50,
+//     },
+//   }
+// });
 
 // иницилизация Choices
 const element = document.querySelector('.gallery__select');
@@ -268,91 +268,91 @@ modalOverlay.addEventListener('click', function(e) {
     }
 });
 
-// иницилизация slider-swiper
-const eventsSlider = new Swiper(".events-slider", {
-  slideClass: 'events-slider__slide',
-  wrapperClass: 'events-slider__wrapper',
-  navigation: {
-    nextEl: '.events-slider__btn-next',
-    prevEl: '.events-slider__btn-prev',
-  },
-  pagination: {
-    el: '.events-slider__pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 15,
-    },
-    // when window width is >= 567px
-    576: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 15,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 34,
-    },
-    // when window width is >= 992px
-    1024: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 27,
-    },
-    // when window width is >= 992px
-    1201: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 50,
-    },
-  }
-});
-const partnersSlider = new Swiper(".partners-slider", {
-  slideClass: 'partners-slider__slide',
-  wrapperClass: 'partners-slider__wrapper',
-  navigation: {
-    nextEl: '.partners__btn-next',
-    prevEl: '.partners__btn-prev',
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 15,
-    },
-    // when window width is >= 576px
-    576: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 15,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 34,
-    },
-    // when window width is >= 992px
-    1024: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 50,
-    },
-    // when window width is >= 992px
-    1201: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 50,
-    },
-  }
-});
+// // иницилизация slider-swiper
+// const eventsSlider = new Swiper(".events-slider", {
+//   slideClass: 'events-slider__slide',
+//   wrapperClass: 'events-slider__wrapper',
+//   navigation: {
+//     nextEl: '.events-slider__btn-next',
+//     prevEl: '.events-slider__btn-prev',
+//   },
+//   pagination: {
+//     el: '.events-slider__pagination',
+//     clickable: true,
+//   },
+//   breakpoints: {
+//     // when window width is >= 320px
+//     320: {
+//       slidesPerView: 1,
+//       slidesPerGroup: 1,
+//       spaceBetween: 15,
+//     },
+//     // when window width is >= 567px
+//     576: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 15,
+//     },
+//     // when window width is >= 768px
+//     768: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 34,
+//     },
+//     // when window width is >= 992px
+//     1024: {
+//       slidesPerView: 3,
+//       slidesPerGroup: 3,
+//       spaceBetween: 27,
+//     },
+//     // when window width is >= 992px
+//     1201: {
+//       slidesPerView: 3,
+//       slidesPerGroup: 3,
+//       spaceBetween: 50,
+//     },
+//   }
+// });
+// const partnersSlider = new Swiper(".partners-slider", {
+//   slideClass: 'partners-slider__slide',
+//   wrapperClass: 'partners-slider__wrapper',
+//   navigation: {
+//     nextEl: '.partners__btn-next',
+//     prevEl: '.partners__btn-prev',
+//   },
+//   breakpoints: {
+//     // when window width is >= 320px
+//     320: {
+//       slidesPerView: 1,
+//       slidesPerGroup: 1,
+//       spaceBetween: 15,
+//     },
+//     // when window width is >= 576px
+//     576: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 15,
+//     },
+//     // when window width is >= 768px
+//     768: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 34,
+//     },
+//     // when window width is >= 992px
+//     1024: {
+//       slidesPerView: 2,
+//       slidesPerGroup: 2,
+//       spaceBetween: 50,
+//     },
+//     // when window width is >= 992px
+//     1201: {
+//       slidesPerView: 3,
+//       slidesPerGroup: 3,
+//       spaceBetween: 50,
+//     },
+//   }
+// });
 
 //  иницилизация tippy
 tippy('[data-tippy-content]', {
@@ -360,35 +360,35 @@ tippy('[data-tippy-content]', {
   duration: 300,
 });
 
-// иницилизация yandex карты
-let center = [55.75846806898367,37.60108849999989];
-function init() {
-    let map = new ymaps.Map('contacts__map', {
-        center: center,
-        zoom: 16,
-    },
-    {
-      zoomControlPosition: {right: 25, top: 300,},
-      geolocationControlPosition: {right: 25, top: 250,},
-    });
+// // иницилизация yandex карты
+// let center = [55.75846806898367,37.60108849999989];
+// function init() {
+//     let map = new ymaps.Map('contacts__map', {
+//         center: center,
+//         zoom: 16,
+//     },
+//     {
+//       zoomControlPosition: {right: 25, top: 300,},
+//       geolocationControlPosition: {right: 25, top: 250,},
+//     });
 
-    let placemark = new ymaps.Placemark(center, {}, {
-      iconLayout: 'default#image',
-      iconImageHref: './img/mapicon.svg',
-      iconImageSize: [20, 20],
-      iconImageOffset: [-10, -10],
-    });
+//     let placemark = new ymaps.Placemark(center, {}, {
+//       iconLayout: 'default#image',
+//       iconImageHref: './img/mapicon.svg',
+//       iconImageSize: [20, 20],
+//       iconImageOffset: [-10, -10],
+//     });
 
-    map.controls.remove('searchControl');
-    map.controls.remove('trafficControl');
-    map.controls.remove('typeSelector');
-    map.controls.remove('fullscreenControl');
-    map.controls.remove('rulerControl');
-    map.behaviors.disable(['scrollZoom']);
-    map.geoObjects.add(placemark);
-}
+//     map.controls.remove('searchControl');
+//     map.controls.remove('trafficControl');
+//     map.controls.remove('typeSelector');
+//     map.controls.remove('fullscreenControl');
+//     map.controls.remove('rulerControl');
+//     map.behaviors.disable(['scrollZoom']);
+//     map.geoObjects.add(placemark);
+// }
 
-ymaps.ready(init);
+// ymaps.ready(init);
 
 // inputmask
 const form = document.querySelector('.form');
@@ -408,12 +408,12 @@ btnmodalMessage.addEventListener('click', function(e) {
 let openMessage = function() {
  modalMessage.classList.add('is-visible');
  modalOverlay.classList.add('overlay--visible');
-//  disableScroll();
+ disableScroll();
 }
 let closeMessage = function() {
  modalMessage.classList.remove('is-visible');
  modalOverlay.classList.remove('overlay--visible');
-//  enableScroll();
+ enableScroll();
 }
 
 validation
@@ -433,7 +433,7 @@ validation
    {
     rule: 'customRegexp',
     value: /^[а-яёА-ЯЁ\s]+$/gi,
-    errorMessage: 'Неверный формат',
+    errorMessage: 'Только русские символы',
   },
    {
      rule: 'required',
@@ -444,7 +444,7 @@ validation
  .addField('#tel', [
    {
      rule: 'required',
-     errorMessage: 'Телефон обязателен',
+     errorMessage: 'Введите телефон',
    },
    {
      rule: 'function',
@@ -452,7 +452,7 @@ validation
        const phone = telSelector.inputmask.unmaskedvalue();
        return phone.length === 10;
      },
-     errorMessage: 'Введите корректный телефон',
+     errorMessage: 'Не достаточное количество символов',
    },
  ]).onSuccess((event) => {
    let formData = new FormData(event.target);
