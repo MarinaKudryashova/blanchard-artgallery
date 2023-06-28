@@ -959,6 +959,9 @@ img {
   line-height: 32px;
   background-color: transparent;
 }
+.is-open .choices__inner {
+  border-radius: 6px;
+}
 .choices[data-type*=select-one] .choices__inner {
   padding-bottom: 5px;
 }
