@@ -1383,7 +1383,7 @@ img {
   opacity: 0;
   visibility: hidden;
 }
-.painters-info__item.tab--visible {
+.painters-info__item.is-visible {
   display: block;
   opacity: 1;
   visibility: visible;

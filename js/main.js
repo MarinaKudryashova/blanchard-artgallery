@@ -229,8 +229,8 @@ let tabsItem = document.querySelectorAll('.painters-info__item');
       });
 
       tabsItem.forEach(function(item) {
-        item.classList.remove('tab--visible');
-        document.querySelector(`[data-target="${path}"]`).classList.add('tab--visible');
+        item.classList.remove('is-visible');
+        document.querySelector(`[data-target="${path}"]`).classList.add('is-visible');
       });
     });
   });
