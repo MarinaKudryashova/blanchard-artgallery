@@ -144,76 +144,6 @@ btnSearchClose.addEventListener('click', function() {
   input.value = '';
 });
 
-// document.addEventListener('click',
-// function(el) {
-//   let target = el.target;
-//   if(!target.closest('.header__search-bar')) {
-//     formSearch.classList.remove('is-open');
-//     // btnSearchOpen.setAttribute('aria-expanded', false);
-//     input.value = '';
-//   }
-
-// });
-
-// // иницилизация slider-swiper
-// const promoSlider = new Swiper(".promo-swiper", {
-//   loop: true,
-//   slideClass: 'promo-swiper__slide',
-//   wrapperClass: 'promo-swiper__wrapper',
-//   speed: 2000,
-//   autoplay: {
-//     delay: 2000,
-//   },
-//   effect: 'fade',
-//   fadeEffect: {
-//     crossFade: true,
-//   },
-// });
-// const gallerySlider = new Swiper(".gallery-swiper", {
-//   slideClass: 'gallery-swiper__slide',
-//   wrapperClass: 'gallery-swiper__wrapper',
-//   navigation: {
-//     nextEl: '.gallery-swiper__btn-next',
-//     prevEl: '.gallery-swiper__btn-prev',
-//   },
-//   pagination: {
-//     el: '.gallery-swiper__pagination',
-//     type: 'fraction',
-//   },
-//   breakpoints: {
-//     // when window width is >= 320px
-//     320: {
-//       slidesPerView: 1,
-//       slidesPerGroup: 1,
-//       spaceBetween: 15,
-//     },
-//     // when window width is >= 567px
-//     576: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 15,
-//     },
-//     // when window width is >= 768px
-//     768: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 38,
-//     },
-//     // when window width is >= 992px
-//     1024: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 34
-//     },
-//     // when window width is >= 992px
-//     1200: {
-//       slidesPerView: 3,
-//       slidesPerGroup: 3,
-//       spaceBetween: 50,
-//     },
-//   }
-// });
-
 // иницилизация Choices
 const element = document.querySelector('.gallery__select');
 const choices = new Choices(element, {
@@ -318,6 +248,17 @@ let tabsItem = document.querySelectorAll('.painters-info__item');
     } else {
       painter.removeAttribute('data-target-id');
     }
+    tabsBtn.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        let pathId =e.currentTarget.getAttribute('data-path-id');
+        let targetId =document.querySelector(`[data-target-id="${pathId}"]`);
+        targetId.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+      });
+      });
+    });
   }
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
     for (let smoothLink of smoothLinks) {
@@ -331,105 +272,6 @@ let tabsItem = document.querySelectorAll('.painters-info__item');
 
       });
     };
-    tabsBtn.forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        let pathId =e.currentTarget.getAttribute('data-path-id');
-        let targetId =document.querySelector(`[data-target-id="${pathId}"]`);
-        targetId.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-      });
-      });
-
-    });
-
-
-// // иницилизация slider-swiper
-// const eventsSlider = new Swiper(".events-slider", {
-//   slideClass: 'events-slider__slide',
-//   wrapperClass: 'events-slider__wrapper',
-//   navigation: {
-//     nextEl: '.events-slider__btn-next',
-//     prevEl: '.events-slider__btn-prev',
-//   },
-//   pagination: {
-//     el: '.events-slider__pagination',
-//     clickable: true,
-//   },
-//   breakpoints: {
-//     // when window width is >= 320px
-//     320: {
-//       slidesPerView: 1,
-//       slidesPerGroup: 1,
-//       spaceBetween: 15,
-//     },
-//     // when window width is >= 567px
-//     576: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 15,
-//     },
-//     // when window width is >= 768px
-//     768: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 34,
-//     },
-//     // when window width is >= 992px
-//     1024: {
-//       slidesPerView: 3,
-//       slidesPerGroup: 3,
-//       spaceBetween: 27,
-//     },
-//     // when window width is >= 992px
-//     1201: {
-//       slidesPerView: 3,
-//       slidesPerGroup: 3,
-//       spaceBetween: 50,
-//     },
-//   }
-// });
-// const partnersSlider = new Swiper(".partners-slider", {
-//   slideClass: 'partners-slider__slide',
-//   wrapperClass: 'partners-slider__wrapper',
-//   navigation: {
-//     nextEl: '.partners__btn-next',
-//     prevEl: '.partners__btn-prev',
-//   },
-//   breakpoints: {
-//     // when window width is >= 320px
-//     320: {
-//       slidesPerView: 1,
-//       slidesPerGroup: 1,
-//       spaceBetween: 15,
-//     },
-//     // when window width is >= 576px
-//     576: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 15,
-//     },
-//     // when window width is >= 768px
-//     768: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 34,
-//     },
-//     // when window width is >= 992px
-//     1024: {
-//       slidesPerView: 2,
-//       slidesPerGroup: 2,
-//       spaceBetween: 50,
-//     },
-//     // when window width is >= 992px
-//     1201: {
-//       slidesPerView: 3,
-//       slidesPerGroup: 3,
-//       spaceBetween: 50,
-//     },
-//   }
-// });
 
 //  иницилизация tippy
 tippy('[data-tippy-content]', {
@@ -447,35 +289,6 @@ tippyBtns.forEach(function(btn) {
     }
   });
 });
-// // иницилизация yandex карты
-// let center = [55.75846806898367,37.60108849999989];
-// function init() {
-//     let map = new ymaps.Map('contacts__map', {
-//         center: center,
-//         zoom: 16,
-//     },
-//     {
-//       zoomControlPosition: {right: 25, top: 300,},
-//       geolocationControlPosition: {right: 25, top: 250,},
-//     });
-
-//     let placemark = new ymaps.Placemark(center, {}, {
-//       iconLayout: 'default#image',
-//       iconImageHref: './img/mapicon.svg',
-//       iconImageSize: [20, 20],
-//       iconImageOffset: [-10, -10],
-//     });
-
-//     map.controls.remove('searchControl');
-//     map.controls.remove('trafficControl');
-//     map.controls.remove('typeSelector');
-//     map.controls.remove('fullscreenControl');
-//     map.controls.remove('rulerControl');
-//     map.behaviors.disable(['scrollZoom']);
-//     map.geoObjects.add(placemark);
-// }
-
-// ymaps.ready(init);
 
 // inputmask
 const form = document.querySelector('.form');
@@ -568,45 +381,3 @@ validation
 
    event.target.reset();
  });
-
- //плавный скролл при клике на ссылки
-//  const smoothLinks = document.querySelectorAll('a[href^="#"]');
-//   for (let smoothLink of smoothLinks) {
-//     smoothLink.addEventListener('click', function (e) {
-//       e.preventDefault();
-//       const id = smoothLink.getAttribute('href');
-
-//       document.querySelector(id).scrollIntoView({
-//         behavior: 'smooth',
-//         block: 'start'
-//       });
-//     });
-//   };
-
-  // const navElements = document.querySelectorAll('a[href^="#"]');
-  // navElements.forEach((link) => {
-  //   link.addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const id = link.getAttribute('href');
-  //     const target = document.querySelector(id);
-  //     const offsetTop = target.getBoundingClientRect().top + window.pageYOffset;
-
-  //     window.scrollTo({
-  //       top: offsetTop,
-  //       behavior: "smooth"
-  //     });
-  //   });
-  // });
-
-  //   const smoothLinks = document.querySelectorAll('li[data-tab-id^="#"]');
-// for (let smoothLink of smoothLinks) {
-//     smoothLink.addEventListener('click', function (e) {
-//         e.preventDefault();
-//         const id = smoothLink.getAttribute('data-tab-id');
-
-//         document.querySelector(id).scrollIntoView({
-//             behavior: 'smooth',
-//             block: 'start'
-//         });
-//     });
-// };
