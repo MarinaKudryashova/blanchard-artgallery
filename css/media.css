@@ -288,7 +288,6 @@
   .events-slider {
     margin-left: 0;
     padding: 0;
-    /* width: calc(100% - 2px); */
     width: 100%;
   }
   .events-slider__slide {
@@ -392,7 +391,6 @@
   }
 }
 @media(max-width: 992px) {
-
   /* burger */
   .btn-burger {
     height: 27px;
@@ -463,73 +461,72 @@
   .gallery-swiper__slide {
     height: 330px;
   }
-    /* catalog */
-    .catalog__title {
-      margin-bottom: 16px;
-    }
-    .catalog__content {
-      flex-direction: column-reverse;
-      padding-top: 19px;
-    }
-    .catalog__painters-info,
-    .catalog__accordion {
-      width: 100%;
-    }
-    .catalog__painters-info {
-      padding-top: 50px;
-    }
-    .catalog__painters-nav {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(9, 32px);
-    }
-    .painters-info__img {
-      /* height: 419px; */
-      margin-bottom: 20px;
-      width: 100%;
-      height: auto;
-    }
-    .painters-info__date {
-      margin-bottom: 6px;
-    }
-    .painters-info__icon {
-      height: 262px;
-    }
-    /* events */
-    .events__place-date {
-      margin-right: -16px;
-    }
-    /* projects */
-    .projects__title {
-      letter-spacing: normal;
-    }
-    .projects__descr {
-      margin-bottom: 30px;
-    }
-    .projects__subtitle {
-      margin-bottom: 27px;
-    }
-    .projects__slider-container {
-      padding: 0 52.5px;
-    }
-    .partners-slider__slide {
-      height: 106px;
-    }
-    .partners-slider__img {
-      padding: 21px 23px;
-    }
-      /* contacts */
-    .form__label {
-      margin-right: 0px;
-    }
-    .form__label:first-child {
-      margin-right: 20px;
-    }
-    .form__input {
-      width: 323px;
-    }
-    .form__btn {
-      padding: 12.5px 29px;
-    }
+  /* catalog */
+  .catalog__title {
+    margin-bottom: 16px;
+  }
+  .catalog__content {
+    flex-direction: column-reverse;
+    padding-top: 19px;
+  }
+  .catalog__painters-info,
+  .catalog__accordion {
+    width: 100%;
+  }
+  .catalog__painters-info {
+    padding-top: 50px;
+  }
+  .catalog__painters-nav {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, 32px);
+  }
+  .painters-info__img {
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+  }
+  .painters-info__date {
+    margin-bottom: 6px;
+  }
+  .painters-info__icon {
+    height: 262px;
+  }
+  /* events */
+  .events__place-date {
+    margin-right: -16px;
+  }
+  /* projects */
+  .projects__title {
+    letter-spacing: normal;
+  }
+  .projects__descr {
+    margin-bottom: 30px;
+  }
+  .projects__subtitle {
+    margin-bottom: 27px;
+  }
+  .projects__slider-container {
+    padding: 0 52.5px;
+  }
+  .partners-slider__slide {
+    height: 106px;
+  }
+  .partners-slider__img {
+    padding: 21px 23px;
+  }
+    /* contacts */
+  .form__label {
+    margin-right: 0px;
+  }
+  .form__label:first-child {
+    margin-right: 20px;
+  }
+  .form__input {
+    width: 323px;
+  }
+  .form__btn {
+    padding: 12.5px 29px;
+  }
 }
 @media(max-width: 767.98px) {
   :root {
@@ -853,122 +850,157 @@
     padding: 17px 20px 29px;
     overflow-y: auto;
   }
-    /* catalog */
-    .catalog__descr {
-      display: none;
-    }
-    .catalog__painters-nav {
-      display: block;
-    }
-    .painters-info__img {
-      height: 181px;
-    }
-    .painters-info__icon {
-      width: 131px;
-      height: 136px;
-    }
-    /* events */
-    .events-slider__pagination {
-      padding-top: 14px;
-    }
-    .events__link {
-      margin-left: 5px;
-    }
-      /* projects */
-    .projects__title {
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-    }
-    .projects__descr {
-      margin-bottom: 18px;
-    }
-    .projects__subtitle {
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-    /* contacts */
-    .contacts__wrapper {
-      padding: 0 0 17px;
-      border: none;
-    }
-    .contacts__place {
-      margin-bottom: 20px;
-    }
-    .contacts-place__subtitle {
-      margin-bottom: 0;
-    }
-    .contacts-place__address {
-      font-size: 14px;
-      line-height: 19px;
-    }
-    .form {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-align: start;
-          -ms-flex-align: start;
-              align-items: flex-start;
-              margin-bottom: 22px;
-      width: 100%;
-    }
-    .form__label {
-      width: 100%;
-    }
-    .form__label,
-    .form__label:first-child {
-      margin-right: 0;
-    }
-    .form__input {
-      margin-bottom: 20px;
-      padding: 4px 23px;
-      max-width: 343px;
-      height: 40px;
-      width: 100%;
-    }
-    .form__btn {
-      margin-bottom: 0px;
-      padding: 10px 34px;
-    }
-    .btn__text--mobile {
-      display: none;
-    }
-    .contacts__messenger {
-      padding-bottom: 0;
-    }
-    .messenger__link {
-      width: 50px;
-      height: 50px;
-    }
-    .messenger__link--whatsapp .messenger__icon {
-      width: 27px;
-      height: 27px;
-    }
-    .messenger__link--telegram .messenger__icon {
-      width: 27px;
-      height: 22px;
-    }
-    .contacts__map {
-      height: 100vw;
-    }
-    /* footer */
-    .footer {
-      padding: 20px 0 17px;
-    }
-    .footer__container {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: reverse;
-          -ms-flex-direction: column-reverse;
-              flex-direction: column-reverse;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-    }
-    .social {
-      margin-bottom: 17px;
-    }
-    .social__icon {
-      width: 50px;
-      height: 50px;
-    }
+  .modal__btn-close {
+    top: 10px;
+    right: 10px;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    background-color: var(--white-color);
+  }
+  /* catalog */
+  .catalog__title {
+    margin-bottom: 12px;
+  }
+  .catalog__content {
+    padding-top: 0;
+  }
+  .catalog__descr {
+    display: none;
+  }
+  .catalog__painters-nav {
+    display: block;
+  }
+
+  .accordion__header {
+    padding: 20px 0;
+  }
+  .accordion__icon {
+    width: 30px;
+    height: 30px;
+  }
+  .accordion__icon::after {
+    top: 50%;
+    width: 8px;
+    height: 8px;
+  }
+  .painters-nav,
+  .sub-template {
+    padding: 20px 0;
+  }
+  .painters-info__icon {
+    width: 131px;
+    height: 136px;
+  }
+  .painters-info__title {
+    margin-bottom: 6px;
+    font-size: 24px;
+  }
+  .painters-info__date {
+    margin-bottom: 15px;
+  }
+  /* events */
+  .events-slider__pagination {
+    padding-top: 14px;
+  }
+  .events__link {
+    margin-left: 5px;
+  }
+    /* projects */
+  .projects__title {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .projects__descr {
+    margin-bottom: 18px;
+  }
+  .projects__subtitle {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  /* contacts */
+  .contacts__wrapper {
+    padding: 0 0 17px;
+    border: none;
+  }
+  .contacts__place {
+    margin-bottom: 20px;
+  }
+  .contacts-place__subtitle {
+    margin-bottom: 0;
+  }
+  .contacts-place__address {
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+            margin-bottom: 22px;
+    width: 100%;
+  }
+  .form__label {
+    width: 100%;
+  }
+  .form__label,
+  .form__label:first-child {
+    margin-right: 0;
+  }
+  .form__input {
+    margin-bottom: 20px;
+    padding: 4px 23px;
+    max-width: 343px;
+    height: 40px;
+    width: 100%;
+  }
+  .form__btn {
+    margin-bottom: 0px;
+    padding: 10px 34px;
+  }
+  .btn__text--mobile {
+    display: none;
+  }
+  .contacts__messenger {
+    padding-bottom: 0;
+  }
+  .messenger__link {
+    width: 50px;
+    height: 50px;
+  }
+  .messenger__link--whatsapp .messenger__icon {
+    width: 27px;
+    height: 27px;
+  }
+  .messenger__link--telegram .messenger__icon {
+    width: 27px;
+    height: 22px;
+  }
+  .contacts__map {
+    height: 100vw;
+  }
+  /* footer */
+  .footer {
+    padding: 20px 0 17px;
+  }
+  .footer__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .social {
+    margin-bottom: 17px;
+  }
+  .social__icon {
+    width: 50px;
+    height: 50px;
+  }
 }

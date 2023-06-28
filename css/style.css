@@ -1507,8 +1507,8 @@ img {
   background-color: var(--light-hover-color);
 }
 .is-active .accordion__header .accordion__icon::after  {
-  /* -webkit-transform: translate(-50%,-50%) rotate(-45deg); */
-      /* -ms-transform: translate(-50%,-50%) rotate(-45deg); */
+  -webkit-transform: translate(-50%,-25%) rotate(45deg);
+      -ms-transform: translate(-50%,-25%) rotate(45deg);
           transform: translate(-50%,-25%) rotate(45deg);
 }
 /* .accordion__body {
