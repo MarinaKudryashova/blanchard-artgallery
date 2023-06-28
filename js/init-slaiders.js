@@ -12,6 +12,7 @@ const promoSlider = new Swiper(".promo-swiper", {
     crossFade: true,
   },
 });
+
 const gallerySlider = new Swiper(".gallery-swiper", {
   slideClass: 'gallery-swiper__slide',
   wrapperClass: 'gallery-swiper__wrapper',
@@ -58,7 +59,6 @@ const gallerySlider = new Swiper(".gallery-swiper", {
 
   a11y: {
     enabled: true,
-
     prevSlideMessage: 'Предыдущий слайд',
     nextSlideMessage: 'Следующий слайд',
     firstSlideMessage: 'Это первый слайд',
@@ -67,7 +67,6 @@ const gallerySlider = new Swiper(".gallery-swiper", {
   }
 });
 
-// иницилизация slider-swiper
 const eventsSlider = new Swiper(".events-slider", {
   slideClass: 'events-slider__slide',
   wrapperClass: 'events-slider__wrapper',
@@ -114,11 +113,12 @@ const eventsSlider = new Swiper(".events-slider", {
 
   a11y: {
     enabled: true,
-
+    paginationBulletMessage: 	'Перейти к слайду {{index}}',
     prevSlideMessage: 'Предыдущий слайд',
     nextSlideMessage: 'Следующий слайд',
     firstSlideMessage: 'Это первый слайд',
     lastSlideMessage: 'Это последний слайд',
+    // slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
     slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
   }
 });
@@ -164,6 +164,7 @@ const partnersSlider = new Swiper(".partners-slider", {
 
   a11y: {
     enabled: true,
+
 
     prevSlideMessage: 'Предыдущий слайд',
     nextSlideMessage: 'Следующий слайд',

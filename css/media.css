@@ -464,19 +464,32 @@
     height: 330px;
   }
     /* catalog */
+    .catalog__title {
+      margin-bottom: 16px;
+    }
     .catalog__content {
       flex-direction: column-reverse;
+      padding-top: 19px;
     }
     .catalog__painters-info,
     .catalog__accordion {
       width: 100%;
+    }
+    .catalog__painters-info {
+      padding-top: 50px;
     }
     .catalog__painters-nav {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(9, 32px);
     }
     .painters-info__img {
-      height: 419px;
+      /* height: 419px; */
+      margin-bottom: 20px;
+      width: 100%;
+      height: auto;
+    }
+    .painters-info__date {
+      margin-bottom: 6px;
     }
     .painters-info__icon {
       height: 262px;

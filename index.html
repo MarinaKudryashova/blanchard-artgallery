@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="lib/simplebar.css">
     <link rel="stylesheet" href="lib/swiper-bundle.min.css">
     <link rel="stylesheet" href="lib/choices.min.css">
+    <link rel="stylesheet" href="lib/accordion.min.css">
     <link rel="stylesheet" href="css/style.css?v=2">
     <link rel="stylesheet" href="css/media.css?v=2">
     <title>Blanchard художественная галерея</title>
@@ -60,7 +61,7 @@
                 <use xlink:href="img/sprite.svg#search"></use>
               </svg>
             </button>
-            <input class="searchbar__field input-reset" type="text" name="search" placeholder="Поиск по сайту" aria-label="поле поиска">
+            <input class="searchbar__field input-reset" type="text" name="search" placeholder="Поиск по сайту" aria-label="поиска по сайту">
             <button class="searchbar__btn searchbar__close btn-closes btn-reset" aria-label="закрыть форму поиска" type="button">
               <svg class="searchbar__btn-icon" width="23" height="23">
                 <use xlink:href="img/sprite.svg#searchbar-close"></use>
@@ -161,7 +162,7 @@
               </div>
             </li>
             <li class="menu-dropdown__item">
-              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть меню" aria-expanded="false">
+              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Авангард" aria-expanded="false">
                 <span class="menu-dropdown__text link-text">Авангард</span>
                 <svg class="menu-dropdown__icon" width="12" height="7">
                   <use xlink:href="img/sprite.svg#arrow"></use>
@@ -185,7 +186,7 @@
               </div>
             </li>
             <li class="menu-dropdown__item">
-              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть меню" aria-expanded="false">
+              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Футуризм" aria-expanded="false">
                 <span class="menu-dropdown__text link-text">Футуризм</span>
                 <svg class="menu-dropdown__icon" width="12" height="7">
                   <use xlink:href="img/sprite.svg#arrow"></use>
@@ -210,9 +211,7 @@
             </li>
           </ul>
         </div>
-
       </div>
-
   </header>
   <main class="main">
     <section class="promo">
@@ -243,43 +242,39 @@
         <div class="gallery__content">
           <div class="gallery__forms-group">
             <h2 class="gallery__title section-title margin-reset">Галерея</h2>
-            <form action="#" class="gallery__form-select" method="post">
-              <fieldset class="fieldset-reset">
-                <legend class="gallery__legend section-text">Фильтр:</legend>
-                <select class="gallery__select" name="select" aria-label="фильтр по виду искусств">
-                    <option class="section-text" selected >Живопись</option>
-                    <option class="section-text">Рисунок</option>
-                    <option class="section-text">Скульптура</option>
-                </select>
-              </fieldset>
+            <form action="#" class="gallery__form-select" method="post" aria-label="форма фильтрации по виду искусств">
+              <legend class="gallery__legend section-text">Фильтр:</legend>
+              <select class="gallery__select" name="select" aria-label="фильтр по виду искусств">
+                  <option class="section-text" selected >Живопись</option>
+                  <option class="section-text">Рисунок</option>
+                  <option class="section-text">Скульптура</option>
+              </select>
             </form>
-            <form action="#" class="gallery__checkbox checkbox" method="post">
-              <fieldset class="fieldset-reset">
-                <legend class="gallery__legend visually-hidden">Фильтр по векам:</legend>
-                <ul class="checkbox__list list-reset">
-                  <li class="checkbox__item">
-                    <label class="checkbox__label">
-                      <input class="checkbox__input visually-hidden" type="checkbox" name="19century">
-                      <span class="checkbox__custom" role="checkbox" aria-checked="false"></span>
-                      <span class="checkbox__text section-text">XIX век</span>
-                    </label>
-                  </li>
-                  <li class="checkbox__item">
-                    <label class="checkbox__label">
-                      <input class="checkbox__input visually-hidden" type="checkbox" name="20century" checked>
-                      <span class="checkbox__custom" role="checkbox" aria-checked="true"></span>
-                      <span class="checkbox__text section-text">XX&nbsp;век</span>
-                    </label>
-                  </li>
-                  <li class="checkbox__item">
-                    <label class="checkbox__label">
-                      <input class="checkbox__input visually-hidden" type="checkbox" name="modernity">
-                      <span class="checkbox__custom" role="checkbox" aria-checked="false"></span>
-                      <span class="checkbox__text section-text">Современность</span>
-                    </label>
-                  </li>
-                </ul>
-              </fieldset>
+            <form action="#" class="gallery__checkbox checkbox" method="post" aria-label="форма фильтрации по векам">
+              <legend class="gallery__legend visually-hidden">Фильтр по векам:</legend>
+              <ul class="checkbox__list list-reset">
+                <li class="checkbox__item">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input visually-hidden" type="checkbox" name="19century" aria-label="девятнадцатый век">
+                    <span class="checkbox__custom" role="checkbox" aria-checked="false"></span>
+                    <span class="checkbox__text section-text">XIX век</span>
+                  </label>
+                </li>
+                <li class="checkbox__item">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input visually-hidden" type="checkbox" name="20century" checked aria-label="двацатый век">
+                    <span class="checkbox__custom" role="checkbox" aria-checked="true" ></span>
+                    <span class="checkbox__text section-text">XX&nbsp;век</span>
+                  </label>
+                </li>
+                <li class="checkbox__item">
+                  <label class="checkbox__label">
+                    <input class="checkbox__input visually-hidden" type="checkbox" name="modernity">
+                    <span class="checkbox__custom" role="checkbox" aria-checked="false"></span>
+                    <span class="checkbox__text section-text">Современность</span>
+                  </label>
+                </li>
+              </ul>
             </form>
           </div>
           <div class="gallery__slider gallery-swiper">
@@ -290,8 +285,8 @@
             </div>
             <div class="gallery-swiper__wrapper">
               <div class="gallery-swiper__slide">
-                <button class="gallery__btn-open btn-reset" data-path="torso"></button>
-                <picture >
+                <button class="gallery__btn-open btn-reset" data-path="torso" aria-label="Показать информацию о картине Малевича - Фигура с розовым лицом4" aria-expanded="false"></button>
+                <picture>
                   <source media="(max-width: 576px)" type="image/webp" srcset="img/gallery-slider/torso320.webp 1x, img/gallery-slider/torso320@2x.webp 2x">
                   <source media="(max-width: 576px)" type="image/jpg" srcset="img/gallery-slider/torso320.jpg 1x, img/gallery-slider/torso320@2x.jpg 2x">
                   <source media="(max-width: 992px)" type="image/webp" srcset="img/gallery-slider/torso768.webp 1x, img/gallery-slider/torso768@2x.webp 2x">
@@ -300,11 +295,11 @@
                   <source media="(max-width: 1200px)" type="image/jpg" srcset="img/gallery-slider/torso1024.jpg 1x, img/gallery-slider/torso1024@2x.jpg 2x">
                   <source type="image/webp" srcset="img/gallery-slider/torso1920.webp 1x, img/gallery-slider/torso1920@2x.webp 2x">
                   <source type="image/jpg" srcset="img/gallery-slider/torso1920@2x.jpg 2x" >
-                  <img class="gallery-swiper__image" src="img/gallery-slider/torso1920.jpg" alt="Картина Малевича К.С. - Фигура с розовым лицом или Торс" width="350" height="350">
+                  <img class="gallery-swiper__image" src="img/gallery-slider/torso1920.jpg" alt="Картина Малевича - Фигура с розовым лицом или Торс" width="350" height="350">
                 </picture>
               </div>
               <div class="gallery-swiper__slide">
-                <button class="gallery__btn-open btn-reset" data-path="woman-rake"></button>
+                <button class="gallery__btn-open btn-reset" data-path="woman-rake" aria-label="Показать информацию о картине Малевича К.С. - Женщина с граблями" aria-expanded="false"></button>
                 <picture>
                   <source media="(max-width: 576px)" type="image/webp" srcset="img/gallery-slider/woman-rake320.webp 1x, img/gallery-slider/woman-rake320@2x.webp 2x">
                   <source media="(max-width: 576px)" type="image/jpg" srcset="img/gallery-slider/woman-rake320.jpg 1x, img/gallery-slider/woman-rake320@2x.jpg 2x">
@@ -318,7 +313,7 @@
                 </picture>
               </div>
               <div class="gallery-swiper__slide">
-                <button class="gallery__btn-open btn-reset" data-path="cleaning"></button>
+                <button class="gallery__btn-open btn-reset" data-path="cleaning" aria-label="Показать информацию о картине Малевича К.С. - Уборка ржи" aria-expanded="false"></button>
                 <picture>
                   <source media="(max-width: 576px)" type="image/webp" srcset="img/gallery-slider/cleaning320.webp 1x, img/gallery-slider/cleaning320@2x.webp 2x">
                   <source media="(max-width: 576px)" type="image/jpg" srcset="img/gallery-slider/cleaning320.jpg 1x, img/gallery-slider/cleaning320@2x.jpg 2x">
@@ -332,7 +327,7 @@
                 </picture>
               </div>
               <div class="gallery-swiper__slide">
-                <button class="gallery__btn-open btn-reset" data-path="klun-composition"></button>
+                <button class="gallery__btn-open btn-reset" data-path="klun-composition" aria-label="Показать информацию о картине Клюн И.В. - Суперматизм"></button>
                 <picture>
                   <source media="(max-width: 576px)" type="image/webp" srcset="img/gallery-slider/klun-composition320.webp 1x, img/gallery-slider/klun-composition320@2x.webp 2x">
                   <source media="(max-width: 576px)" type="image/jpg" srcset="img/gallery-slider/klun-composition320.jpg 1x, img/gallery-slider/klun-composition320@2x.jpg 2x">
@@ -345,7 +340,7 @@
                 </picture>
               </div>
               <div class="gallery-swiper__slide">
-                <button class="gallery__btn-open btn-reset" data-path="woman-backets"></button>
+                <button class="gallery__btn-open btn-reset" data-path="woman-backets" aria-label="Показать информацию о картине Малевича К.С. - Женщина с ведрами"></button>
                 <picture>
                   <source media="(max-width: 576px)" type="image/webp" srcset="img/gallery-slider/woman-backets320.webp 1x, img/gallery-slider/woman-backets320@2x.webp 2x">
                   <source media="(max-width: 576px)" type="image/jpg" srcset="img/gallery-slider/woman-backets320.jpg 1x, img/gallery-slider/woman-backets320@2x.jpg 2x">
@@ -358,10 +353,14 @@
                 </picture>
               </div>
               <div class="gallery-swiper__slide">
-                <button class="gallery__btn-open btn-reset" data-path="malevich-composition"></button>
+                <button class="gallery__btn-open btn-reset" data-path="malevich-composition" aria-label="Показать информацию о картине Малевича К.С. - Суперматическая композиция"></button>
                 <picture>
-                  <!-- <source media="(max-width: 1200px)" type="image/webp" srcset="img/gallery-slider/malevich-composition1024.webp 1x, img/gallery-slider/malevich-composition1024@2x.webp 2x" > -->
-                  <!-- <source media="(max-width: 1200px)" type="image/jpg" srcset="img/gallery-slider/malevich-composition1024.jpg 1x, img/gallery-slider/malevich-composition1024@2x.jpg 2x" > -->
+                  <source media="(max-width: 576px)" type="image/webp" srcset="img/gallery-slider/malevich-composition320.webp 1x, img/gallery-slider/malevich-composition320@2x.webp 2x">
+                  <source media="(max-width: 576px)" type="image/jpg" srcset="img/gallery-slider/malevich-composition320.jpg 1x, img/gallery-slider/malevich-composition320@2x.jpg 2x">
+                  <source media="(max-width: 992px)" type="image/webp" srcset="img/gallery-slider/malevich-composition768.webp 1x, img/gallery-slider/malevich-composition768@2x.webp 2x">
+                  <source media="(max-width: 992px)" type="image/jpg" srcset="img/gallery-slider/malevich-composition768.jpg 1x, img/gallery-slider/malevich-composition768@2x.jpg 2x">
+                  <source media="(max-width: 1200px)" type="image/webp" srcset="img/gallery-slider/malevich-composition1024.webp 1x, img/gallery-slider/malevich-composition1024@2x.webp 2x">
+                  <source media="(max-width: 1200px)" type="image/jpg" srcset="img/gallery-slider/malevich-composition1024.jpg 1x, img/gallery-slider/malevich-composition1024@2x.jpg 2x">
                   <source type="image/webp" srcset="img/gallery-slider/malevich-composition1920.webp 1x, img/gallery-slider/malevich-composition1920@2x.webp 2x" >
                   <img class="gallery-swiper__image" src="img/gallery-slider/malevich-composition1920.jpg" srcset="img/gallery-slider/malevich-composition1920@2x.jpg 2x" alt="Картина Малевича К.С. - Суперматическая композиция" width="350" height="350">
                 </picture>
@@ -371,7 +370,7 @@
         </div>
       </div>
       <ul class="gallery__modals overlay list-reset">
-        <li class="gallery__modal modal" data-target="torso">
+        <li class="gallery__modal modal" data-target="torso" role="dialog" aria-modal="true">
           <img src="img/gallery-modal/torso1920@1x.jpg" alt="Картина Малевича К.С. - Фигура с розовым лицом или Торс" class="modal__img">
           <div class="modal__content">
             <span class="modal__autor">Казимир Малевич</span>
@@ -379,13 +378,13 @@
             <span class="modal__date">1928&ndash;1929</span>
             <p class="modal__descr section-text margin-reset">Будучи директором Государственного института художественной культуры, хорошо сознавая значение своего творчества, своих исследований, Малевич долго и&nbsp;упорно добивался у&nbsp;властей заграничной командировки&nbsp;и, наконец, в&nbsp;1927 году он&nbsp;повез в&nbsp;Европу свою выставку. Будучи директором Государственного института художественной культуры, хорошо сознавая значение своего творчества, своих исследований, Малевич долго и&nbsp;упорно добивался у&nbsp;властей заграничной командировки&nbsp;и, наконец, в&nbsp;1927 году он&nbsp;повез в&nbsp;Европу свою выставку.</p>
           </div>
-          <button class="modal__btn-close btn-reset" type="button">
+          <button class="modal__btn-close btn-reset" type="button" aria-label="Закрыть модальное окно">
             <svg class="modal__btn-icon" width="16" height="16">
               <use xlink:href="img/sprite.svg#modal-close"></use>
             </svg>
           </button>
         </li>
-        <li class="gallery__modal modal" data-target="woman-rake">
+        <li class="gallery__modal modal" data-target="woman-rake" role="dialog" aria-modal="true">
           <img src="img/gallery-modal/modal-woman-rake1920@1x.jpg" alt="Картина Малевича К.С. - Женщина с граблями" class="modal__img">
           <div class="modal__content">
             <span class="modal__autor">Казимир Малевич</span>
@@ -393,7 +392,7 @@
             <span class="modal__date">1931&ndash;1932</span>
             <p class="modal__descr section-text margin-reset">Картина из&nbsp;второй серии крестьянского цикла работ Казимира Малевича. Художник принялся за&nbsp;её&nbsp;создание в&nbsp;1930&ndash;1931&nbsp;годах, после того, как первый цикл был утерян после Берлинской и&nbsp;Варшавской выставок в&nbsp;1927&nbsp;году.</p>
           </div>
-          <button class="modal__btn-close btn-reset" type="button">
+          <button class="modal__btn-close btn-reset" type="button" aria-label="Закрыть модальное окно">
             <svg class="modal__btn-icon" width="16" height="16">
               <use xlink:href="img/sprite.svg#modal-close"></use>
             </svg>
@@ -419,7 +418,7 @@
 
             Взгляд притягивает яркая палитра, использующая комплементарную контрастность цвета. Энергичные сочетания красного и&nbsp;зеленого, синего и&nbsp;желтого добавляют некую динамику в&nbsp;застывшие формы.</p>
           </div>
-          <button class="modal__btn-close btn-reset" type="button">
+          <button class="modal__btn-close btn-reset" type="button" aria-label="Закрыть модальное окно">
             <svg class="modal__btn-icon" width="16" height="16">
               <use xlink:href="img/sprite.svg#modal-close"></use>
             </svg>
@@ -433,7 +432,7 @@
             <span class="modal__date">1915</span>
             <p class="modal__descr section-text margin-reset">Важнейшим моментом его биографии была встреча в&nbsp;1907 году с&nbsp;К.&nbsp;С.&nbsp;Малевичем, который оказал колоссальное влияние на&nbsp;дальнейшее развитие художника, ввел его в&nbsp;художественные круги русского авангарда. Это, однако, не&nbsp;помешало Клюну стать членом общества &laquo;Московский салон&raquo; в&nbsp;1910&nbsp;году.</p>
           </div>
-          <button class="modal__btn-close btn-reset" type="button">
+          <button class="modal__btn-close btn-reset" type="button" aria-label="Закрыть модальное окно">
             <svg class="modal__btn-icon" width="16" height="16">
               <use xlink:href="img/sprite.svg#modal-close"></use>
             </svg>
@@ -447,7 +446,7 @@
             <span class="modal__date">1912</span>
             <p class="modal__descr section-text margin-reset">&laquo;Женщина с&nbsp;вёдрами&raquo; Казимира Малевича&nbsp;&mdash; яркое произведение авангардного искусства, написанное в&nbsp;1912&nbsp;году. Ныне картина хранится в&nbsp;коллекции нью-йоркского Музея современного искусства.</p>
           </div>
-          <button class="modal__btn-close btn-reset" type="button">
+          <button class="modal__btn-close btn-reset" type="button" aria-label="Закрыть модальное окно">
             <svg class="modal__btn-icon" width="16" height="16">
               <use xlink:href="img/sprite.svg#modal-close"></use>
             </svg>
@@ -461,7 +460,7 @@
             <span class="modal__date">1915-1916</span>
             <p class="modal__descr section-text margin-reset">Являясь разновидностью абстракционизма, супрематизм выражался в&nbsp;комбинациях разноцветных плоскостей простейших геометрических очертаний (в&nbsp;геометрических формах прямой линии, квадрата, круга и&nbsp;прямоугольника).</p>
           </div>
-          <button class="modal__btn-close btn-reset" type="button">
+          <button class="modal__btn-close btn-reset" type="button" aria-label="Закрыть модальное окно">
             <svg class="modal__btn-icon" width="16" height="16">
               <use xlink:href="img/sprite.svg#modal-close"></use>
             </svg>
@@ -477,8 +476,7 @@
           <ul class="catalog__painters-info painters-info list-reset">
             <li class="painters-info__item" data-target="benedetto">
               <picture>
-                <source type="image/webp" srcset="img/catalog/benedetto.webp 1x, img/catalog/benedetto@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/benedetto@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/benedetto.webp">
                 <img src="img/catalog/benedetto.jpg" alt="Картина художника Бенедетто ди Биндо" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Бенедетто ди&nbsp;Биндо</h3>
@@ -487,8 +485,7 @@
             </li>
             <li class="painters-info__item" data-target="bergognone">
               <picture>
-                <source type="image/webp" srcset="img/catalog/bergognone.webp 1x, img/catalog/bergognone@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/bergognone@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/bergognone.webp">
                 <img src="img/catalog/bergognone.jpg" alt="Картина художника Бергоньоне, Амброджо" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Бергоньоне, Амброджо</h3>
@@ -497,18 +494,16 @@
             </li>
             <li class="painters-info__item" data-target="bissolo">
               <picture>
-                <source type="image/webp" srcset="img/catalog/bissolo.webp 1x, img/catalog/bissolo@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/bissolo@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/bissolo.webp">
                 <img src="img/catalog/bissolo.jpg" alt="Картина художника Биссоло, Франческо" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Биссоло, Франческо</h3>
               <span class="painters-info__date">1470&nbsp;&mdash; 20&nbsp;апреля 1554</span>
               <p class="painters-info__descr section-text margin-reset">Сын художника. Ученик Джованни Беллини. С&nbsp;1490 переехал в&nbsp;мастерскую Беллини. С&nbsp;1492 по&nbsp;1530 год работал в&nbsp;Венеции. Помогал учителю в&nbsp;работе над украшением Большого зала Совета Дворца дожей (Венеция). Принимал участие в&nbsp;создании украшений Церкви Иль Реденторе в&nbsp;Венеции. Художник эпохи Возрождения. В&nbsp;своём творчестве подражал Джорджоне. Работы художника хранятся ныне во&nbsp;многих музеях мира. В&nbsp;санкт-петербургском Эрмитаже находится его картина &laquo;Богоматерь с&nbsp;Младенцем Христом&raquo;. В&nbsp;Британской Национальной галерее&nbsp;&mdash; &laquo;Мадонна с&nbsp;Младенцем со&nbsp;святыми и&nbsp;донатором&raquo;. Ряд его полотен находится в&nbsp;музеях Варшавы, Лос-Анджелеса (Музей Нортона Саймона и&nbsp;Los Angeles County Museum of&nbsp;Art), Дэйтоновском институте искусств (штат Огайо, США) и&nbsp;др.</p>
             </li>
-            <!-- <li class="painters-info__item" data-target="boltrafio">
+            <li class="painters-info__item" data-target="boltrafio">
               <picture>
-                <source type="image/webp" srcset="img/catalog/boltrafio.webp 1x, img/catalog/boltrafio@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/boltrafio@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/boltrafio.webp">
                 <img src="img/catalog/boltrafio.jpg" alt="Картина художника Больтраффио, Джованни" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Больтраффио, Джованни</h3>
@@ -517,8 +512,7 @@
             </li>
             <li class="painters-info__item" data-target="bonsignori">
               <picture>
-                <source type="image/webp" srcset="img/catalog/bonsignori.webp 1x, img/catalog/bonsignori@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/bonsignori@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/bonsignori.webp">
                 <img src="img/catalog/bonsignori.jpg" alt="Картина художника Бонсиньори, Франческо" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Бонсиньори, Франческо</h3>
@@ -527,8 +521,7 @@
             </li>
             <li class="painters-info__item" data-target="botticini">
               <picture>
-                <source type="image/webp" srcset="img/catalog/botticini.webp 1x, img/catalog/botticini@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/botticini@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/botticini.webp">
                 <img src="img/catalog/botticini.jpg" alt="Картина художника Боттичини, Рафаэлло" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Боттичини, Рафаэлло</h3>
@@ -537,8 +530,7 @@
             </li>
             <li class="painters-info__item" data-target="bramantino">
               <picture>
-                <source type="image/webp" srcset="img/catalog/bramantino.webp 1x, img/catalog/bramantino@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/bramantino@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/bramantino.webp">
                 <img src="img/catalog/bramantino.jpg" alt="Картина художника Брамантино" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Брамантино</h3>
@@ -547,8 +539,7 @@
             </li>
             <li class="painters-info__item" data-target="brea">
               <picture>
-                <source type="image/webp" srcset="img/catalog/brea.webp 1x, img/catalog/brea@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/brea@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/brea.webp">
                 <img src="img/catalog/brea.jpg" alt="Картина художника Бреа, Людовико" class="painters-info__img" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Бреа, Людовико</h3>
@@ -557,15 +548,14 @@
             </li>
             <li class="painters-info__item" data-target="biagio">
               <picture>
-                <source type="image/webp" srcset="img/catalog/biagio.webp 1x, img/catalog/biagio@2x.webp 2x">
-                <source type="image/jpg" srcset="img/catalog/biagio@2x.jpg 2x" >
+                <source type="image/webp" srcset="img/catalog/biagio.webp">
                 <img src="img/catalog/biagio.jpg" class="painters-info__img" alt="Картина художника Бьяджо д’Антонио Туччи" width="750" height="470">
               </picture>
               <h3 class="painters-info__title section-subtitle margin-reset">Бьяджо д&rsquo;Антонио Туччи</h3>
               <span class="painters-info__date">1446&nbsp;&mdash; 1&nbsp;июня 1516</span>
               <p class="painters-info__descr section-text margin-reset">Итальянский художник эпохи Возрождения. Его творчество было вдохновлено работами Филиппо Липпи, Андреа Верроккьо, Доменико Гирландайо. Последнюю четверть&nbsp;XV века работал в&nbsp;Фаэнце, но&nbsp;в&nbsp;его стиле мало элементов флорентийского стиля&nbsp;&mdash; прослеживается влияние ранней нидерландскрй живописи.</p>
-            </li> -->
-            <li class="painters-info__item tab--visible" data-target="domeniko">
+            </li>
+            <li class="painters-info__item tab--visible" data-target="domeniko" data-tab-id="painter">
               <picture>
                 <!-- <source media="(max-width: 576px)" type="image/webp" srcset="img/catalog/domeniko320.webp 1x, img/catalog/domeniko320@2x.webp 2x"> -->
                 <!-- <source media="(max-width: 576px)" type="image/jpg" srcset="img/catalog/domeniko320.jpg 1x, img/catalog/domeniko320@2x.jpg 2x"> -->
@@ -593,94 +583,94 @@
             </li>
           </ul>
           <ul class="catalog__accordion accordion list-reset">
-            <li class="accordion__item">
-              <button class="accordion__header is-active btn-reset">
+            <li class="accordion__item ac is-active">
+              <button class="accordion__header btn-reset">
                 <span class="accordion__text section-subtitle">C&nbsp;1400 по&nbsp;1499&nbsp;гг</span>
                 <span class="accordion__icon"></span>
               </button>
-              <div class="accordion__body is-active">
+              <div class="accordion__body ac-panel is-active">
                 <ul class="catalog__painters-nav painters-nav list-reset">
                   <li class="painters-nav__item">
-                    <button aria-label="Бенедетто ди Биндо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="benedetto">Бенедетто ди&nbsp;Биндо</button>
+                    <button aria-label="Бенедетто ди Биндо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="benedetto" data-path-id="painter">Бенедетто ди&nbsp;Биндо</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Бергоньоне, Амброджо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bergognone">Бергоньоне, Амброджо</button>
+                    <button aria-label="Бергоньоне, Амброджо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bergognone" data-path-id="painter">Бергоньоне, Амброджо</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Биссоло, Франческо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bissolo">Биссоло, Франческо</button>
+                    <button aria-label="Биссоло, Франческо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bissolo" data-path-id="painter">Биссоло, Франческо</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Больтраффио, Джованни" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="boltrafio">Больтраффио, Джованни</button>
+                    <button aria-label="Больтраффио, Джованни" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="boltrafio" data-path-id="painter">Больтраффио, Джованни</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Бонсиньори, Франческо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bonsignori">Бонсиньори, Франческо</button>
+                    <button aria-label="Бонсиньори, Франческо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bonsignori" data-path-id="painter">Бонсиньори, Франческо</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Боттичини, Рафаэлло" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="botticini">Боттичини, Рафаэлло</button>
+                    <button aria-label="Боттичини, Рафаэлло" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="botticini" data-path-id="painter">Боттичини, Рафаэлло</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Брамантино" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bramantino">Брамантино</button>
+                    <button aria-label="Брамантино" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="bramantino" data-path-id="painter">Брамантино</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Бреа, Людовико" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="brea">Бреа, Людовико</button>
+                    <button aria-label="Бреа, Людовико" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="brea" data-path-id="painter">Бреа, Людовико</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Бьяджо д’Антонио Туччи" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="biagio">Бьяджо д&rsquo;Антонио Туччи</button>
+                    <button aria-label="Бьяджо д’Антонио Туччи" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="biagio" data-path-id="painter">Бьяджо д&rsquo;Антонио Туччи</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Веккьетта" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="vecchietta">Веккьетта</button>
+                    <button aria-label="Веккьетта" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Веккьетта</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Андреа Верроккьо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="andrea">Андреа Верроккьо</button>
+                    <button aria-label="Андреа Верроккьо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Андреа Верроккьо</button>
                   </li>
                   <li class="painters-nav__item is-active">
-                    <button aria-label="Доменико Гирландайо" aria-expanded="true" class="painters-nav__btn btn-reset" data-path="domeniko">Доменико Гирландайо</button>
+                    <button aria-label="Доменико Гирландайо" aria-expanded="true" class="painters-nav__btn btn-reset" data-path="domeniko" data-path-id="painter">Доменико Гирландайо</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Беноццо Гоццоли" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="benozzo">Беноццо Гоццоли</button>
+                    <button aria-label="Беноццо Гоццоли" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Беноццо Гоццоли</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Граначчи, Франческо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="granacci">Граначчи, Франческо</button>
+                    <button aria-label="Граначчи, Франческо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Граначчи, Франческо</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Грегорио ди Чекко" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="gregorio">Грегорио ди&nbsp;Чекко</button>
+                    <button aria-label="Грегорио ди Чекко" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Грегорио ди&nbsp;Чекко</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Джованни да Удине" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Джованни да&nbsp;Удине</button>
+                    <button aria-label="Джованни да Удине" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Джованни да&nbsp;Удине</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Джованни ди Паоло" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Джованни ди&nbsp;Паоло</button>
+                    <button aria-label="Джованни ди Паоло" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Джованни ди&nbsp;Паоло</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Джорджоне" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Джорджоне</button>
+                    <button aria-label="Джорджоне" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Джорджоне</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Парентино, Бернардо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Парентино, Бернардо</button>
+                    <button aria-label="Парентино, Бернардо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Парентино, Бернардо</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Пезеллино" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Пезеллино</button>
+                    <button aria-label="Пезеллино" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Пезеллино</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Пьетро Перуджино" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Пьетро Перуджино</button>
+                    <button aria-label="Пьетро Перуджино" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Пьетро Перуджино</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Перуцци, Бальдассаре" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Перуцци, Бальдассаре</button>
+                    <button aria-label="Перуцци, Бальдассаре" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Перуцци, Бальдассаре</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Пизанелло" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Пизанелло</button>
+                    <button aria-label="Пизанелло" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Пизанелло</button>
                   </li>
                   <li class="painters-nav__item">
-                    <button aria-label="Пинтуриккьо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter">Пинтуриккьо</button>
+                    <button aria-label="Пинтуриккьо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Пинтуриккьо</button>
                   </li>
                 </ul>
               </div>
             </li>
-            <li class="accordion__item">
+            <li class="accordion__item ac">
               <button class="accordion__header btn-reset">
                 <span class="accordion__text section-subtitle">C&nbsp;1500 по&nbsp;1599&nbsp;гг</span>
                 <span class="accordion__icon"></span>
               </button>
-             <div class="accordion__body">
+             <div class="accordion__body ac-panel">
                 <div class="accordion__sub-template sub-template">
                   <div class="sub-template__img"></div>
                   <div class="sub-template__info">
@@ -691,12 +681,12 @@
                 </div>
              </div>
             </li>
-            <li class="accordion__item">
+            <li class="accordion__item ac">
               <button class="accordion__header btn-reset">
                 <span class="accordion__text section-subtitle">C&nbsp;1600 по&nbsp;1699&nbsp;гг</span>
                 <span class="accordion__icon"></span>
               </button>
-             <div class="accordion__body">
+             <div class="accordion__body ac-panel">
                 <div class="accordion__sub-template sub-template">
                   <div class="sub-template__img"></div>
                   <div class="sub-template__info">
@@ -707,12 +697,12 @@
                 </div>
              </div>
             </li>
-            <li class="accordion__item">
+            <li class="accordion__item ac">
               <button class="accordion__header btn-reset">
                 <span class="accordion__text section-subtitle">C&nbsp;1700 по&nbsp;1799&nbsp;гг</span>
                 <span class="accordion__icon"></span>
               </button>
-             <div class="accordion__body">
+             <div class="accordion__body ac-panel">
               <div class="accordion__sub-template sub-template">
                 <div class="sub-template__img"></div>
                 <div class="sub-template__info">
@@ -723,12 +713,12 @@
               </div>
              </div>
             </li>
-            <li class="accordion__item">
+            <li class="accordion__item ac">
               <button class="accordion__header btn-reset">
                 <span class="accordion__text section-subtitle">C&nbsp;1800 по&nbsp;1899&nbsp;гг</span>
                 <span class="accordion__icon"></span>
               </button>
-             <div class="accordion__body">
+             <div class="accordion__body ac-panel">
               <div class="accordion__sub-template sub-template">
                 <div class="sub-template__img"></div>
                 <div class="sub-template__info">
@@ -739,12 +729,12 @@
               </div>
              </div>
             </li>
-            <li class="accordion__item">
+            <li class="accordion__item ac">
               <button class="accordion__header btn-reset">
                 <span class="accordion__text section-subtitle">C&nbsp;1900 по&nbsp;1999&nbsp;гг</span>
                 <span class="accordion__icon"></span>
               </button>
-             <div class="accordion__body">
+             <div class="accordion__body ac-panel">
               <div class="accordion__sub-template sub-template">
                 <div class="sub-template__img"></div>
                 <div class="sub-template__info">
@@ -755,12 +745,12 @@
               </div>
              </div>
             </li>
-            <li class="accordion__item">
+            <li class="accordion__item ac">
               <button class="accordion__header btn-reset">
                 <span class="accordion__text section-subtitle">C&nbsp;2000&nbsp;г</span>
                 <span class="accordion__icon"></span>
               </button>
-             <div class="accordion__body">
+             <div class="accordion__body ac-panel">
               <div class="accordion__sub-template sub-template">
                 <div class="sub-template__img"></div>
                 <div class="sub-template__info">
@@ -900,19 +890,19 @@
       <div class="container">
         <h2 class="projects__title section-title margin-reset">Проекты</h2>
         <p class="projects__descr section-text margin-reset">Предварительные выводы: постоянное информационно&nbsp;&mdash; пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское
-          <button class="projects__tooltip projects-tooltip btn-reset" data-tippy-content="Пример современных тенденций&nbsp;&mdash; современная методология разработки" aria-label="всплывающая подсказка">
+          <button class="projects__tooltip projects-tooltip btn-reset" data-tippy-content="Пример современных тенденций&nbsp;&mdash; современная методология разработки" aria-label="всплывающая подсказка" aria-expanded="false">
             <svg class="projects-tooltip__icon" width="2" height="10">
               <use xlink:href="img/sprite.svg#tooltip"></use>
             </svg>
           </button>
            обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены
-          <button class="projects__tooltip projects-tooltip btn-reset" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают у&nbsp;вас эмоции">
+          <button class="projects__tooltip projects-tooltip btn-reset" data-tippy-content="Приятно, граждане, наблюдать, как сделанные на&nbsp;базе аналитики выводы вызывают у&nbsp;вас эмоции" aria-label="всплывающая подсказка" aria-expanded="false">
             <svg class="projects-tooltip__icon" width="2" height="10">
               <use xlink:href="img/sprite.svg#tooltip"></use>
             </svg>
           </button>
            исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых
-          <button class="projects__tooltip projects-tooltip btn-reset" data-tippy-content="В&nbsp;стремлении повысить качество">
+          <button class="projects__tooltip projects-tooltip btn-reset" data-tippy-content="В&nbsp;стремлении повысить качество" aria-label="всплывающая подсказка" aria-expanded="false">
             <svg class="projects-tooltip__icon" width="2" height="10">
               <use xlink:href="img/sprite.svg#tooltip"></use>
             </svg>
@@ -986,14 +976,14 @@
             <h3 class="contacts-place__subtitle section-subtitle margin-reset">Шоурум &#8470;&nbsp;4</h3>
             <address class="contacts-place__address section-text margin-reset">Леонтьевский переулок, дом 5/1</address>
           </div>
-          <form action="mail.php" class="contacts__form form" method="post" enctype="multipart/form-data">
+          <form action="mail.php" class="contacts__form form" method="post" enctype="multipart/form-data" aria-label="форма заказа обратного звонка">
             <label for="name" class="form__label">
-              <input class="form__input" placeholder="Имя*" type="text" name="name" id="name" data-validate-field="name">
+              <input class="form__input" placeholder="Имя*" type="text" name="name" id="name" data-validate-field="name" aria-label="Введите ваше имя">
             </label>
             <label for="tel" class="form__label">
-              <input class="form__input" placeholder="Телефон*" type="tel" name="tel" id="tel" data-validate-field="tel">
+              <input class="form__input" placeholder="Телефон*" type="tel" name="tel" id="tel" data-validate-field="tel" aria-label="Введите ваш телефон">
             </label>
-            <button class="form__btn btn btn-reset btn-submit" type="submit">Заказать <span class="btn__text--mobile">обратный звонок</span></button>
+            <button class="form__btn btn btn-reset btn-submit" type="submit" aria-label="Отправить заявку">Заказать <span class="btn__text--mobile">обратный звонок</span></button>
           </form>
           <div class="contacts__modal contacts-modal modal-message success">
             <button class="contacts-modal__btn btn-reset" type="button">
@@ -1037,14 +1027,14 @@
       </a>
       <ul class="footer__social-list social list-reset">
         <li class="social__item">
-          <a href="https://vk.com" class="social__link" target="_blank" aria-label="Мы в ВКонтаке">
+          <a href="https://vk.com" class="social__link" target="_blank" aria-label="Открыть нашу страницу в ВКонтаке">
             <svg class="social__icon" width="45" height="45">
               <use xlink:href="img/sprite.svg#vk"></use>
             </svg>
           </a>
         </li>
         <li class="social__item">
-          <a href="https://ok.ru" class="social__link" target="_blank" aria-label="Мы на Одноклассниках">
+          <a href="https://ok.ru" class="social__link" target="_blank" aria-label="Открыть нашу страницу на Одноклассниках">
             <svg class="social__icon" width="45" height="45">
               <use xlink:href="img/sprite.svg#ok"></use>
             </svg>
@@ -1057,6 +1047,7 @@
   <script src="lib/simplebar.min.js"></script>
   <script src="lib/swiper-bundle.min.js"></script>
   <script src="lib/choices.min.js"></script>
+  <script src="lib/accordion.min.js"></script>
   <script src="lib/popper.min.js"></script>
   <script src="lib/tippy-bundle.umd.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?apikey=372942ca-4293-49a7-b932-3be172c26f71&lang=ru_RU"></script>

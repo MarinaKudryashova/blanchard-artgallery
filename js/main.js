@@ -27,9 +27,11 @@ burger.addEventListener('click', function() {
   menu.classList.toggle('menu-open');
   if (burger.getAttribute('aria-label') === 'Открыть меню') {
     burger.setAttribute("aria-label", 'Закрыть меню');
+    burger.setAttribute('aria-expanded', true);
     disableScroll();
   } else {
     burger.setAttribute("aria-label", 'Открыть меню');
+    burger.setAttribute('aria-expanded', false);
     enableScroll();
   }
 });
@@ -37,6 +39,7 @@ burger.addEventListener('click', function() {
 let menuClose = function() {
   burger.classList.remove('is-open');
   burger.setAttribute("aria-label", 'Открыть меню');
+  burger.setAttribute('aria-expanded', false);
   menu.classList.remove('menu-open');
   enableScroll();
 };
@@ -63,8 +66,6 @@ document.addEventListener ('DOMContentLoaded', () => {
   let menuDropdownClose = function() {
     menuBtn.forEach(btn => {
       btn.classList.remove('is-open');
-      btn.setAttribute('aria-label','Открыть список художников направления');
-      btn.setAttribute('aria-expanded', false);
     });
     dropList.forEach(list => {
         list.classList.remove('is-open');
@@ -74,16 +75,13 @@ document.addEventListener ('DOMContentLoaded', () => {
   menuBtn.forEach(btn => {
     btn.addEventListener('click', (e) => {
       let currentBtn = e.currentTarget;
+      let TextBtn = currentBtn.firstElementChild.textContent;
       let currentList = currentBtn.closest('.menu-dropdown__item').querySelector('.dropdown');
       let currentSimplebarContentWrapper = currentBtn.closest('.menu-dropdown__item').querySelector('.simplebar-content-wrapper');
 
       menuBtn.forEach(btn => {
         if(btn !== currentBtn) {
-
-          //TODO дальше много повторяется
           btn.classList.remove('is-open');
-          btn.setAttribute('aria-label','Открыть список художников направления');
-          btn.setAttribute('aria-expanded', false);
         };
       });
       dropList.forEach(list => {
@@ -96,10 +94,10 @@ document.addEventListener ('DOMContentLoaded', () => {
       currentBtn.classList.toggle('is-open');
       // меняем атрибуты доступности открыто\закрыто
       if(currentBtn.classList.contains('is-open')) {
-        currentBtn.setAttribute('aria-label', 'Закрыть список художников направления');
+        currentBtn.setAttribute('aria-label', `Закрыть список художников направления ${TextBtn}`);
         currentBtn.setAttribute('aria-expanded', true);
       } else {
-        currentBtn.setAttribute('aria-label','Открыть список художников направления');
+        currentBtn.setAttribute('aria-label',`Открыть список художников направления ${TextBtn}`);
         currentBtn.setAttribute('aria-expanded', false);
       };
       currentList.classList.toggle('is-open');
@@ -136,13 +134,13 @@ let btnSearchClose = document.querySelector('.searchbar__close');
 btnSearchOpen.addEventListener('click', function() {
   formSearch.classList.add('searchbar__form--open');
   btnSearchOpen.classList.add('searchbar__open--active');
-  // btnSearchOpen.setAttribute('aria-expanded', true);
+  btnSearchOpen.setAttribute('aria-expanded', true);
 });
 
 btnSearchClose.addEventListener('click', function() {
   formSearch.classList.remove('searchbar__form--open');
   btnSearchOpen.classList.remove('searchbar__open--active');
-  // btnSearchOpen.setAttribute('aria-expanded', false);
+  btnSearchOpen.setAttribute('aria-expanded', false);
   input.value = '';
 });
 
@@ -240,6 +238,7 @@ btnsModalOpen.forEach(function(btn) {
         modals.forEach(function(el) {
             el.classList.remove('modal--visible');
         });
+        // e.currentTarget.setAttribute('aria-expanded', true);
         document.querySelector(`[data-target="${path}"]`).classList.add('modal--visible');
         modalOverlay.classList.add('overlay--visible');
         disableScroll();
@@ -257,7 +256,7 @@ let modalClose = function() {
 // закрытие закрытие окна по close
 btnsModalClose.forEach(function(btn) {
   btn.addEventListener('click', function(e) {
-  modalClose();
+    modalClose();
   });
 });
 
@@ -267,6 +266,84 @@ modalOverlay.addEventListener('click', function(e) {
       modalClose();
     }
 });
+// закрытие по esc
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modalClose();
+  }
+});
+
+// иницилизация accordion
+const accordions = Array.from(document.querySelectorAll('.accordion'));
+new Accordion(accordions, {
+  duration: 400,
+  collapse: true,
+  elementClass: 'accordion__item',
+  triggerClass: 'accordion__header',
+  panelClass: 'accordion__body',
+  openOnInit: [0],
+});
+// иницилизация tabs
+let tabsBtn = document.querySelectorAll('.painters-nav__btn');
+let tabsItem = document.querySelectorAll('.painters-info__item');
+
+  tabsBtn.forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      let path =e.currentTarget.getAttribute('data-path');
+
+      tabsBtn.forEach(function(btn) {
+        btn.classList.remove('is-active');
+        btn.setAttribute("aria-expanded", false);
+        e.currentTarget.classList.add('is-active');
+        e.currentTarget.setAttribute("aria-expanded", true)
+      });
+
+      tabsItem.forEach(function(item) {
+        item.classList.remove('tab--visible');
+        document.querySelector(`[data-target="${path}"]`).classList.add('tab--visible');
+      });
+    });
+  });
+// для мобильных доскроливание при переключении
+  let painter = document.querySelector('.painters-info');
+  if (matchMedia) {
+    const mQuery = window.matchMedia('(max-width: 992px)');
+    mQuery.addEventListener('change', changes);
+    changes(mQuery);
+  }
+  function changes(mQuery) {
+    if (mQuery.matches) {
+      painter.setAttribute('data-target-id', 'painter');
+
+    } else {
+      painter.removeAttribute('data-target-id');
+    }
+  }
+  const smoothLinks = document.querySelectorAll('a[href^="#"]');
+    for (let smoothLink of smoothLinks) {
+      smoothLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute('href');
+        document.querySelector(id).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+
+      });
+    };
+    tabsBtn.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        let pathId =e.currentTarget.getAttribute('data-path-id');
+        let targetId =document.querySelector(`[data-target-id="${pathId}"]`);
+        targetId.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+      });
+      });
+
+    });
+
 
 // // иницилизация slider-swiper
 // const eventsSlider = new Swiper(".events-slider", {
@@ -359,7 +436,17 @@ tippy('[data-tippy-content]', {
   trigger: 'click',
   duration: 300,
 });
-
+let tippyBtns = document.querySelectorAll('.projects-tooltip');
+tippyBtns.forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    let tippyCurrent = e.currentTarget;
+    if(tippyCurrent.getAttribute('aria-expanded') === 'false') {
+        tippyCurrent.setAttribute('aria-expanded', true);
+    } else {
+      tippyCurrent.setAttribute('aria-expanded', false);
+    }
+  });
+});
 // // иницилизация yandex карты
 // let center = [55.75846806898367,37.60108849999989];
 // function init() {
@@ -481,3 +568,45 @@ validation
 
    event.target.reset();
  });
+
+ //плавный скролл при клике на ссылки
+//  const smoothLinks = document.querySelectorAll('a[href^="#"]');
+//   for (let smoothLink of smoothLinks) {
+//     smoothLink.addEventListener('click', function (e) {
+//       e.preventDefault();
+//       const id = smoothLink.getAttribute('href');
+
+//       document.querySelector(id).scrollIntoView({
+//         behavior: 'smooth',
+//         block: 'start'
+//       });
+//     });
+//   };
+
+  // const navElements = document.querySelectorAll('a[href^="#"]');
+  // navElements.forEach((link) => {
+  //   link.addEventListener('click', function (e) {
+  //     e.preventDefault();
+  //     const id = link.getAttribute('href');
+  //     const target = document.querySelector(id);
+  //     const offsetTop = target.getBoundingClientRect().top + window.pageYOffset;
+
+  //     window.scrollTo({
+  //       top: offsetTop,
+  //       behavior: "smooth"
+  //     });
+  //   });
+  // });
+
+  //   const smoothLinks = document.querySelectorAll('li[data-tab-id^="#"]');
+// for (let smoothLink of smoothLinks) {
+//     smoothLink.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         const id = smoothLink.getAttribute('data-tab-id');
+
+//         document.querySelector(id).scrollIntoView({
+//             behavior: 'smooth',
+//             block: 'start'
+//         });
+//     });
+// };
