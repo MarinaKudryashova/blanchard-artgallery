@@ -434,6 +434,10 @@
     width: 100%;
   }
   /* gallery */
+  .choices__list--dropdown,
+  .choices__list[aria-expanded] {
+    background-color: var(--dark-bg-color);
+  }
   .gallery {
     background-image: url(../img/gallery/gallery-bg768.jpg)
   }
