@@ -244,21 +244,22 @@ let tabsItem = document.querySelectorAll('.painters-info__item');
   function changes(mQuery) {
     if (mQuery.matches) {
       painter.setAttribute('data-target-id', 'painter');
+      tabsBtn.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          let pathId =e.currentTarget.getAttribute('data-path-id');
+          let targetId =document.querySelector(`[data-target-id="${pathId}"]`);
+          targetId.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        });
+      });
 
     } else {
       painter.removeAttribute('data-target-id');
     }
-    tabsBtn.forEach(function(btn) {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        let pathId =e.currentTarget.getAttribute('data-path-id');
-        let targetId =document.querySelector(`[data-target-id="${pathId}"]`);
-        targetId.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-      });
-      });
-    });
+
   }
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
     for (let smoothLink of smoothLinks) {
