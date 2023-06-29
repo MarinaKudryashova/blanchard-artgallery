@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blanchard художественная галерея.">
+    <meta name="description" content="Blanchard художественная галерея">
     <meta name="keywords" content="художественная галерея, живопись, скульптура, рисунок">
     <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/normalize.css">
@@ -243,7 +243,7 @@
           <div class="gallery__forms-group">
             <h2 class="gallery__title section-title margin-reset">Галерея</h2>
             <form action="#" class="gallery__form-select" method="post" aria-label="форма фильтрации по виду искусств">
-              <legend class="gallery__legend section-text">Фильтр:</legend>
+              <span class="gallery__filter-title section-text">Фильтр:</span>
               <select class="gallery__select" name="select" aria-label="фильтр по виду искусств">
                   <option class="section-text" selected >Живопись</option>
                   <option class="section-text">Рисунок</option>
@@ -251,7 +251,7 @@
               </select>
             </form>
             <form action="#" class="gallery__checkbox checkbox" method="post" aria-label="форма фильтрации по векам">
-              <legend class="gallery__legend visually-hidden">Фильтр по векам:</legend>
+              <span class="gallery__filter-title visually-hidden">Фильтр по векам:</span>
               <ul class="checkbox__list list-reset">
                 <li class="checkbox__item">
                   <label class="checkbox__label">
@@ -370,7 +370,7 @@
         </div>
       </div>
       <ul class="gallery__modals overlay list-reset">
-        <li class="gallery__modal modal" data-target="torso" role="dialog" aria-modal="true">
+        <li class="gallery__modal modal" data-target="torso">
           <img src="img/gallery-modal/torso1920@1x.jpg" alt="Картина Малевича К.С. - Фигура с розовым лицом или Торс" class="modal__img">
           <div class="modal__content">
             <span class="modal__autor">Казимир Малевич</span>
@@ -384,7 +384,7 @@
             </svg>
           </button>
         </li>
-        <li class="gallery__modal modal" data-target="woman-rake" role="dialog" aria-modal="true">
+        <li class="gallery__modal modal" data-target="woman-rake">
           <img src="img/gallery-modal/modal-woman-rake1920@1x.jpg" alt="Картина Малевича К.С. - Женщина с граблями" class="modal__img">
           <div class="modal__content">
             <span class="modal__autor">Казимир Малевич</span>
@@ -557,12 +557,6 @@
             </li>
             <li class="painters-info__item is-visible" data-target="domeniko" data-tab-id="painter">
               <picture>
-                <!-- <source media="(max-width: 576px)" type="image/webp" srcset="img/catalog/domeniko320.webp 1x, img/catalog/domeniko320@2x.webp 2x"> -->
-                <!-- <source media="(max-width: 576px)" type="image/jpg" srcset="img/catalog/domeniko320.jpg 1x, img/catalog/domeniko320@2x.jpg 2x"> -->
-                <!-- <source media="(max-width: 992px)" type="image/webp" srcset="img/catalog/domeniko768.webp 1x, img/catalog/domeniko768@2x.webp 2x"> -->
-                <!-- <source media="(max-width: 992px)" type="image/jpg" srcset="img/catalog/domeniko768.jpg 1x, img/catalog/domeniko768@2x.jpg 2x"> -->
-                <!-- <source media="(max-width: 1200px)" type="image/webp" srcset="img/catalog/domeniko1024.webp 1x, img/catalog/domeniko1024@2x.webp 2x"> -->
-                <!-- <source media="(max-width: 1200px)" type="image/jpg" srcset="img/catalog/domeniko1024.jpg 1x, img/catalog/domeniko1024@2x.jpg 2x"> -->
                 <source type="image/webp" srcset="img/catalog/domeniko.webp 1x, img/catalog/domeniko@2x.webp 2x">
                 <source type="image/jpg" srcset="img/catalog/domeniko@2x.jpg 2x" >
                 <img src="img/catalog/domeniko.jpg" alt="Картина художника Доменико Гирландайо" class="painters-info__img" width="750" height="470">
@@ -579,7 +573,7 @@
               </div>
               <h3 class="painters-info__title margin-reset">Что мы&nbsp;о&nbsp;нём знаем?</h3>
               <p class="painters-info__descr margin-reset">Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!</p>
-              <a href="#" class="painters-info__link link-reset">В&nbsp;галерею</a>
+              <a href="#gallery" class="painters-info__link link link-reset">В&nbsp;галерею</a>
             </li>
           </ul>
           <ul class="catalog__accordion accordion list-reset">
@@ -624,7 +618,7 @@
                     <button aria-label="Андреа Верроккьо" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Андреа Верроккьо</button>
                   </li>
                   <li class="painters-nav__item is-active">
-                    <button aria-label="Доменико Гирландайо" aria-expanded="true" class="painters-nav__btn btn-reset" data-path="domeniko" data-path-id="painter">Доменико Гирландайо</button>
+                    <button aria-label="Доменико Гирландайо" aria-expanded="true" class="painters-nav__btn btn-reset is-active" data-path="domeniko" data-path-id="painter">Доменико Гирландайо</button>
                   </li>
                   <li class="painters-nav__item">
                     <button aria-label="Беноццо Гоццоли" aria-expanded="false" class="painters-nav__btn btn-reset" data-path="x-painter" data-path-id="painter">Беноццо Гоццоли</button>
@@ -676,7 +670,7 @@
                   <div class="sub-template__info">
                     <h3 class="sub-template__title section-subtitle margin-reset">Здесь пока пусто</h3>
                     <p class="sub-template__text section-text margin-reset">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя</p>
-                    <a href="#" class="sub-template__link link-reset">В&nbsp;галерею</a>
+                    <a href="#gallery" class="sub-template__link link link-reset">В&nbsp;галерею</a>
                   </div>
                 </div>
              </div>
@@ -692,7 +686,7 @@
                   <div class="sub-template__info">
                     <h3 class="sub-template__title section-subtitle margin-reset">Здесь пока пусто</h3>
                     <p class="sub-template__text section-text margin-reset">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя</p>
-                    <a href="#" class="sub-template__link link-reset">В&nbsp;галерею</a>
+                    <a href="#gallery" class="sub-template__link link link-reset">В&nbsp;галерею</a>
                   </div>
                 </div>
              </div>
@@ -708,7 +702,7 @@
                 <div class="sub-template__info">
                   <h3 class="sub-template__title section-subtitle margin-reset">Здесь пока пусто</h3>
                   <p class="sub-template__text section-text margin-reset">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя</p>
-                  <a href="#" class="sub-template__link link-reset">В&nbsp;галерею</a>
+                  <a href="#gallery" class="sub-template__link link link-reset">В&nbsp;галерею</a>
                 </div>
               </div>
              </div>
@@ -724,7 +718,7 @@
                 <div class="sub-template__info">
                   <h3 class="sub-template__title section-subtitle margin-reset">Здесь пока пусто</h3>
                   <p class="sub-template__text section-text margin-reset">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя</p>
-                  <a href="#" class="sub-template__link link-reset">В&nbsp;галерею</a>
+                  <a href="#gallery" class="sub-template__link link link-reset">В&nbsp;галерею</a>
                 </div>
               </div>
              </div>
@@ -740,7 +734,7 @@
                 <div class="sub-template__info">
                   <h3 class="sub-template__title section-subtitle margin-reset">Здесь пока пусто</h3>
                   <p class="sub-template__text section-text margin-reset">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя</p>
-                  <a href="#" class="sub-template__link link-reset">В&nbsp;галерею</a>
+                  <a href="#gallery" class="sub-template__link link link-reset">В&nbsp;галерею</a>
                 </div>
               </div>
              </div>
@@ -756,7 +750,7 @@
                 <div class="sub-template__info">
                   <h3 class="sub-template__title section-subtitle margin-reset">Здесь пока пусто</h3>
                   <p class="sub-template__text section-text margin-reset">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти что-то интересное для себя</p>
-                  <a href="#" class="sub-template__link link-reset">В&nbsp;галерею</a>
+                  <a href="#gallery" class="sub-template__link link link-reset">В&nbsp;галерею</a>
                 </div>
               </div>
              </div>
@@ -792,7 +786,7 @@
                   </div>
                   <h3 class="events__slide-title">Книжная гравюра в&nbsp;живом восприятии</h3>
                   <p class="events__descr margin-reset">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо</p>
-                  <a href="#" class="events__link link-reset">Подробнее</a>
+                  <a href="#" class="events__link link link-reset">Подробнее</a>
                 </div>
             </div>
             <div class="events-slider__slide">
@@ -815,7 +809,7 @@
                     <br>
                     Дмитрий Петров и&nbsp;Сергей Ильин.</h3>
                   <p class="events__descr margin-reset">Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта</p>
-                  <a href="#" class="events__link link-reset">Подробнее</a>
+                  <a href="#" class="events__link link link-reset">Подробнее</a>
                 </div>
             </div>
             <div class="events-slider__slide">
@@ -836,7 +830,7 @@
                   </div>
                   <h3 class="events__slide-title">Выставка &laquo;Формация 2020&raquo;</h3>
                   <p class="events__descr margin-reset">Идейные соображения высшего порядка, а&nbsp;также современная методология разработки играет важную роль в&nbsp;формировании глубокомысленных рассуждений</p>
-                  <a href="#" class="events__link link-reset">Подробнее</a>
+                  <a href="#" class="events__link link link-reset">Подробнее</a>
                 </div>
             </div>
             <div class="events-slider__slide">
@@ -857,7 +851,7 @@
                   </div>
                   <h3 class="events__slide-title">Джон Винзор. Фотографии из&nbsp;серии &laquo;Метафора&raquo;</h3>
                   <p class="events__descr margin-reset">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо</p>
-                  <a href="#" class="events__link link-reset">Подробнее</a>
+                  <a href="#" class="events__link link link-reset">Подробнее</a>
                 </div>
             </div>
             <div class="events-slider__slide">
@@ -878,7 +872,7 @@
                   </div>
                   <h3 class="events__slide-title">XXIV Международная биеннале молодого искусства</h3>
                   <p class="events__descr margin-reset">Внезапно, реплицированные с&nbsp;зарубежных источников, современные исследования</p>
-                  <a href="#" class="events__link link-reset">Подробнее</a>
+                  <a href="#" class="events__link link link-reset">Подробнее</a>
                 </div>
             </div>
           </div>
@@ -908,7 +902,7 @@
             </svg>
           </button>
            предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершённой неузнаваемости. Подробнее:
-        <a href="www.blanchard-art.ru/projects" class="projects__link link-reset" target="_blank">blanchard-art.ru/projects</a>
+        <a href="www.blanchard-art.ru/projects" class="projects__link link link-reset" target="_blank">blanchard-art.ru/projects</a>
         </p>
         <h3 class="projects__subtitle section-subtitle margin-reset">Партнёры проектов:</h3>
         <div class="projects__slider-container partners">
@@ -1053,10 +1047,8 @@
   <script src="https://api-maps.yandex.ru/2.1/?apikey=372942ca-4293-49a7-b932-3be172c26f71&lang=ru_RU"></script>
   <script src="lib/inputmask.min.js"></script>
   <script src="lib/just-validate.production.min.js"></script>
-
   <script src="js/init-slaiders.js?v=1"></script>
   <script src="js/init-yandexmap.js?v=1"></script>
-
   <script src="js/main.js?v=2"></script>
 </body>
 </html>

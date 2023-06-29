@@ -213,66 +213,41 @@ new Accordion(accordions, {
   panelClass: 'accordion__body',
   openOnInit: [0],
 });
+
 // иницилизация tabs
+const mQuery = window.matchMedia('(max-width: 992px)');
 let tabsBtn = document.querySelectorAll('.painters-nav__btn');
 let tabsItem = document.querySelectorAll('.painters-info__item');
+let painter = document.querySelector('.painters-info');
 
-  tabsBtn.forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      let path =e.currentTarget.getAttribute('data-path');
-
-      tabsBtn.forEach(function(btn) {
-        btn.classList.remove('is-active');
-        btn.setAttribute("aria-expanded", false);
-        e.currentTarget.classList.add('is-active');
-        e.currentTarget.setAttribute("aria-expanded", true)
-      });
-
-      tabsItem.forEach(function(item) {
-        item.classList.remove('is-visible');
-        document.querySelector(`[data-target="${path}"]`).classList.add('is-visible');
-      });
-    });
-  });
-// для мобильных доскроливание при переключении
-  let painter = document.querySelector('.painters-info');
-  if (matchMedia) {
-    const mQuery = window.matchMedia('(max-width: 992px)');
-    mQuery.addEventListener('change', changes);
-    changes(mQuery);
-  }
-  function changes(mQuery) {
+tabsBtn.forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
     if (mQuery.matches) {
       painter.setAttribute('data-target-id', 'painter');
-      tabsBtn.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          let pathId =e.currentTarget.getAttribute('data-path-id');
-          let targetId =document.querySelector(`[data-target-id="${pathId}"]`);
-          targetId.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-        });
-      });
+      let pathId =e.currentTarget.getAttribute('data-path-id');
+      let targetId =document.querySelector(`[data-target-id="${pathId}"]`);
+      targetId.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+  } else {
+    let path =e.currentTarget.getAttribute('data-path');
 
-    } else {
-      painter.removeAttribute('data-target-id');
-    }
+    tabsBtn.forEach(function(btn) {
+      btn.classList.remove('is-active');
+      btn.setAttribute("aria-expanded", false);
+      e.currentTarget.classList.add('is-active');
+      e.currentTarget.setAttribute("aria-expanded", true)
+    });
 
+    tabsItem.forEach(function(item) {
+      item.classList.remove('is-visible');
+      document.querySelector(`[data-target="${path}"]`).classList.add('is-visible');
+    });
+    painter.removeAttribute('data-target-id');
   }
-  const smoothLinks = document.querySelectorAll('a[href^="#"]');
-    for (let smoothLink of smoothLinks) {
-      smoothLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        const id = smoothLink.getAttribute('href');
-        document.querySelector(id).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-
-      });
-    };
+  });
+});
 
 //  иницилизация tippy
 tippy('[data-tippy-content]', {
@@ -382,3 +357,17 @@ validation
 
    event.target.reset();
  });
+
+ // плавный скролл по якорям
+ const smoothLinks = document.querySelectorAll('a[href^="#"]');
+ for (let smoothLink of smoothLinks) {
+   smoothLink.addEventListener('click', function (e) {
+     e.preventDefault();
+     const id = smoothLink.getAttribute('href');
+     document.querySelector(id).scrollIntoView({
+       behavior: 'smooth',
+       block: 'start'
+     });
+
+   });
+ };

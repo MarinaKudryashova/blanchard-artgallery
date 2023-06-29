@@ -1,7 +1,4 @@
 @media(max-width: 1600px) {
-  :root {
-    --container-padding: 50px;
-  }
   /* === header === */
   .header__menu {
     -webkit-box-flex: 1;
@@ -21,7 +18,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(12, 32px);
   }
-
 }
 @media(max-width: 1200px) {
   .text__link {
@@ -335,24 +331,9 @@
     padding: 44px 0 37px;
   }
   .contacts__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-  }
-  .contacts__place,
-  .contacts__messenger,
-  .contacts__form {
-    margin-right: 0;
-  }
-  .contacts__place {
-    margin-bottom: 27px;
   }
   .contacts-place__subtitle {
     margin-bottom: 10px;
@@ -361,21 +342,8 @@
     font-size: 14px;
     line-height: 19px;
   }
-  .form {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    margin-bottom: 18px;
-  }
-  .form__input {
-    margin-bottom: 12px;
-  }
   .form__btn {
-    margin-bottom: 12px;
     padding: 12.5px 41px;
-  }
-  .contacts__messenger {
-    margin-bottom: 0;
   }
   /* footer */
   .footer {
@@ -504,7 +472,7 @@
     letter-spacing: normal;
   }
   .projects__descr {
-    margin-bottom: 30px;
+    margin-bottom: 26px;
   }
   .projects__subtitle {
     margin-bottom: 27px;
@@ -518,15 +486,24 @@
   .partners-slider__img {
     padding: 21px 23px;
   }
-    /* contacts */
+  /* contacts */
+  .contacts__container {
+    row-gap: 26px;
+  }
+  .form {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
+  }
   .form__label {
+    width: calc(50% - 10px);
     margin-right: 0px;
   }
-  .form__label:first-child {
-    margin-right: 20px;
-  }
   .form__input {
-    width: 323px;
+    width: 100%;
   }
   .form__btn {
     padding: 12.5px 29px;
@@ -581,12 +558,8 @@
   }
   .partners-slider__img {
     padding: 10px 27px;
-    /* max-width: 82%; */
   }
   /* contacts */
-  .form__label {
-    margin-right: 20px;
-  }
   .contacts-modal {
     padding: 20px;
   }
@@ -791,7 +764,7 @@
   .gallery__form-select {
     margin-bottom: 30px;
   }
-  .gallery__legend {
+  .gallery__filter-title {
     margin-bottom: 5px;
     font-size: 16px;
     line-height: 2;
@@ -875,7 +848,9 @@
   .catalog__painters-nav {
     display: block;
   }
-
+  .catalog__painters-info {
+    padding-top: 47px;
+  }
   .accordion__header {
     padding: 20px 0;
   }
@@ -927,8 +902,8 @@
     padding: 0 0 17px;
     border: none;
   }
-  .contacts__place {
-    margin-bottom: 20px;
+  .contacts__container {
+    row-gap: 15px;
   }
   .contacts-place__subtitle {
     margin-bottom: 0;
@@ -938,39 +913,24 @@
     line-height: 19px;
   }
   .form {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-            margin-bottom: 22px;
-    width: 100%;
+    row-gap: 20px;
   }
   .form__label {
     width: 100%;
   }
-  .form__label,
-  .form__label:first-child {
-    margin-right: 0;
-  }
   .form__input {
-    margin-bottom: 20px;
     padding: 4px 23px;
-    max-width: 343px;
-    height: 40px;
     width: 100%;
   }
   .form__btn {
-    margin-bottom: 0px;
     padding: 10px 34px;
   }
   .btn__text-mobile{
     display: none;
   }
-  .contacts__messenger {
-    padding-bottom: 0;
+  .messenger__subtitle {
+    margin-bottom: 10px;
+    font-weight: 400;
   }
   .messenger__link {
     width: 50px;
