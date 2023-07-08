@@ -35,12 +35,12 @@
         </a>
         <nav class="header__menu menu">
           <ul class="menu__list list-reset">
-            <li class="menu__item"><a href="#about" class="menu__link link-text link-reset ">О нас</a></li>
-            <li class="menu__item"><a href="#gallery" class="menu__link link-text link-reset ">Галерея</a></li>
-            <li class="menu__item"><a href="#catalog" class="menu__link link-text link-reset ">Каталог</a></li>
-            <li class="menu__item"><a href="#events" class="menu__link link-text link-reset ">События</a></li>
-            <li class="menu__item"><a href="#projects" class="menu__link link-text link-reset ">Проекты</a></li>
-            <li class="menu__item"><a href="#contacts" class="menu__link link-text link-reset ">Контакты</a></li>
+            <li class="menu__item"><a href="#about" class="menu__link link-reset ">О нас</a></li>
+            <li class="menu__item"><a href="#gallery" class="menu__link link-reset ">Галерея</a></li>
+            <li class="menu__item"><a href="#catalog" class="menu__link link-reset ">Каталог</a></li>
+            <li class="menu__item"><a href="#events" class="menu__link link-reset ">События</a></li>
+            <li class="menu__item"><a href="#projects" class="menu__link link-reset ">Проекты</a></li>
+            <li class="menu__item"><a href="#contacts" class="menu__link link-reset ">Контакты</a></li>
           </ul>
           <button class="login btn-reset" aria-label="открыть личный кабинет" aria-expanded="false">
             <svg class="login__icon" width="13" height="13">
@@ -49,169 +49,167 @@
             <span class="login__text">Войти</span>
             </button>
         </nav>
-        <div class="searchbar">
-          <button class="searchbar__btn searchbar__open btn-open btn-reset" aria-label="открыть форму поиска" aria-expanded="false" type="button">
-            <svg class="searchbar__btn-icon" width="23" height="22">
+        <button class="header__searchbar-open searchbar-btn btn-reset" aria-label="открыть форму поиска" aria-expanded="false" type="button">
+          <svg class="searchbar-btn__icon" width="23" height="22">
+            <use xlink:href="img/sprite.svg#search"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="header__bottom">
+      <div class="header__container container">
+        <ul class="menu-dropdown list-reset">
+          <li class="menu-dropdown__item">
+            <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Реализм" aria-expanded="false">
+              <span class="menu-dropdown__text">Реализм</span>
+              <svg class="menu-dropdown__icon" width="12" height="7">
+                <use xlink:href="img/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <div class="menu-dropdown__body dropdown">
+              <ul class="dropdown__list list-reset" data-simplebar>
+                <li class="dropdown__item dropdown__item-tintoretto">
+                  <a href="#" class="dropdown__link link-reset">Тинторетто</a>
+                </li>
+                <li class="dropdown__item dropdown__item-friedrich">
+                  <a href="#" class="dropdown__link link-reset">Фридрих</a>
+                </li>
+                <li class="dropdown__item dropdown__item-leonardo">
+                  <a href="#" class="dropdown__link link-reset">Леонардо</a>
+                </li>
+                <li class="dropdown__item dropdown__item-verrocchio">
+                  <a href="#" class="dropdown__link link-reset">Верроккьо</a>
+                </li>
+                <li class="dropdown__item dropdown__item-verrocchio">
+                  <a href="#" class="dropdown__link link-reset">Верроккьо2</a>
+                </li>
+                <li class="dropdown__item dropdown__item-verrocchio">
+                  <a href="#" class="dropdown__link link-reset">Верроккьо3</a>
+                </li>
+                <li class="dropdown__item dropdown__item-verrocchio">
+                  <a href="#" class="dropdown__link link-reset">Верроккьо4</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu-dropdown__item">
+            <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Импрессионизм" aria-expanded="false">
+              <span class="menu-dropdown__text">Импрессионизм</span>
+              <svg class="menu-dropdown__icon" width="12" height="7">
+                <use xlink:href="img/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <div class="menu-dropdown__body dropdown">
+              <ul class="dropdown__list list-reset" data-simplebar>
+                <li class="dropdown__item dropdown__item-mone">
+                  <a href="#" class="dropdown__link link-reset">Моне</a>
+                </li>
+                <li class="dropdown__item dropdown__item-sisley">
+                  <a href="#" class="dropdown__link link-reset">Сислей</a>
+                </li>
+                <li class="dropdown__item dropdown__item-mane">
+                  <a href="#" class="dropdown__link link-reset">Мане</a>
+                </li>
+                <li class="dropdown__item dropdown__item-renoir">
+                  <a href="#" class="dropdown__link link-reset">Ренуар</a>
+                </li>
+                <li class="dropdown__item dropdown__item-renoir">
+                  <a href="#" class="dropdown__link link-reset">Ренуар2</a>
+                </li>
+                <li class="dropdown__item dropdown__item-renoir">
+                  <a href="#" class="dropdown__link link-reset">Ренуар3</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu-dropdown__item">
+            <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Постимпрессионизм" aria-expanded="false">
+              <span class="menu-dropdown__text">Постимпрессионизм</span>
+              <svg class="menu-dropdown__icon" width="12" height="7">
+                <use xlink:href="img/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <div class="menu-dropdown__body dropdown">
+              <ul class="dropdown__list list-reset" data-simplebar>
+                <li class="dropdown__item dropdown__item-vangogh">
+                  <a href="#" class="dropdown__link link-reset">Ван Гог</a>
+                </li>
+                <li class="dropdown__item dropdown__item-cezanne">
+                  <a href="#" class="dropdown__link link-reset">Сезанн</a>
+                </li>
+                <li class="dropdown__item dropdown__item-gauguin">
+                  <a href="#" class="dropdown__link link-reset">Гоген</a>
+                </li>
+                <li class="dropdown__item dropdown__item-sulfur">
+                  <a href="#" class="dropdown__link link-reset">Сёра</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu-dropdown__item">
+            <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Авангард" aria-expanded="false">
+              <span class="menu-dropdown__text">Авангард</span>
+              <svg class="menu-dropdown__icon" width="12" height="7">
+                <use xlink:href="img/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <div class="menu-dropdown__body dropdown">
+              <ul class="dropdown__list list-reset" data-simplebar>
+                <li class="dropdown__item dropdown__item-kandinsky">
+                  <a href="#" class="dropdown__link link-reset">Кандинский</a>
+                </li>
+                <li class="dropdown__item dropdown__item-marinetti">
+                  <a href="#" class="dropdown__link link-reset">Маринетти</a>
+                </li>
+                <li class="dropdown__item dropdown__item-malevich">
+                  <a href="#" class="dropdown__link link-reset">Малевич</a>
+                </li>
+                <li class="dropdown__item dropdown__item-picasso">
+                  <a href="#" class="dropdown__link link-reset">Пикассо</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu-dropdown__item">
+            <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Футуризм" aria-expanded="false">
+              <span class="menu-dropdown__text">Футуризм</span>
+              <svg class="menu-dropdown__icon" width="12" height="7">
+                <use xlink:href="img/sprite.svg#arrow"></use>
+              </svg>
+            </button>
+            <div class="menu-dropdown__body dropdown">
+              <ul class="dropdown__list list-reset" data-simplebar>
+                <li class="dropdown__item dropdown__item-carra">
+                  <a href="#" class="dropdown__link link-reset">Карра</a>
+                </li>
+                <li class="dropdown__item dropdown__item-pratella">
+                  <a href="#" class="dropdown__link link-reset">Прателла</a>
+                </li>
+                <li class="dropdown__item dropdown__item-severini">
+                  <a href="#" class="dropdown__link link-reset">Северини</a>
+                </li>
+                <li class="dropdown__item dropdown__item-balla">
+                  <a href="#" class="dropdown__link link-reset">Балла</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <form class="header__searchbar searchbar" action="#" method="get" aria-label="форма поиска">
+          <button class="searchbar-btn btn-search btn-reset" type="submit" aria-label="начать поиск">
+            <svg class="searchbar-btn__icon" width="23" height="22">
               <use xlink:href="img/sprite.svg#search"></use>
             </svg>
           </button>
-          <form class="searchbar__form" action="#" method="get" aria-label="форма поиска">
-            <button class="searchbar__btn searchbar__btn--search btn-search btn-reset" type="submit" aria-label="начать поиск">
-              <svg class="searchbar__btn-icon" width="23" height="22">
-                <use xlink:href="img/sprite.svg#search"></use>
-              </svg>
-            </button>
-            <input class="searchbar__field input-reset" type="text" name="search" placeholder="Поиск по сайту" aria-label="поиска по сайту">
-            <button class="searchbar__btn searchbar__close btn-closes btn-reset" aria-label="закрыть форму поиска" type="button">
-              <svg class="searchbar__btn-icon" width="23" height="23">
-                <use xlink:href="img/sprite.svg#searchbar-close"></use>
-              </svg>
-            </button>
-          </form>
-        </div>
+          <input class="searchbar__field input-reset" type="text" name="search" placeholder="Поиск по сайту" aria-label="поиска по сайту">
+          <button class="searchbar-btn searchbar__close btn-closes btn-reset" aria-label="закрыть форму поиска" type="button">
+            <svg class="searchbar-btn__icon" width="23" height="22">
+              <use xlink:href="img/sprite.svg#searchbar-close"></use>
+            </svg>
+          </button>
+        </form>
       </div>
     </div>
-      <div class="header__bottom">
-        <div class="header__container container">
-          <ul class="menu-dropdown list-reset">
-            <li class="menu-dropdown__item">
-              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Реализм" aria-expanded="false">
-                <span class="menu-dropdown__text link-text">Реализм</span>
-                <svg class="menu-dropdown__icon" width="12" height="7">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-              <div class="menu-dropdown__body dropdown">
-                <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item dropdown__item-tintoretto">
-                    <a href="#" class="dropdown__link link-reset">Тинторетто</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-friedrich">
-                    <a href="#" class="dropdown__link link-reset">Фридрих</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-leonardo">
-                    <a href="#" class="dropdown__link link-reset">Леонардо</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-verrocchio">
-                    <a href="#" class="dropdown__link link-reset">Верроккьо</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-verrocchio">
-                    <a href="#" class="dropdown__link link-reset">Верроккьо2</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-verrocchio">
-                    <a href="#" class="dropdown__link link-reset">Верроккьо3</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-verrocchio">
-                    <a href="#" class="dropdown__link link-reset">Верроккьо4</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="menu-dropdown__item">
-              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Импрессионизм" aria-expanded="false">
-                <span class="menu-dropdown__text link-text">Импрессионизм</span>
-                <svg class="menu-dropdown__icon" width="12" height="7">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-              <div class="menu-dropdown__body dropdown">
-                <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item dropdown__item-mone">
-                    <a href="#" class="dropdown__link link-reset">Моне</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-sisley">
-                    <a href="#" class="dropdown__link link-reset">Сислей</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-mane">
-                    <a href="#" class="dropdown__link link-reset">Мане</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-renoir">
-                    <a href="#" class="dropdown__link link-reset">Ренуар</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-renoir">
-                    <a href="#" class="dropdown__link link-reset">Ренуар2</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-renoir">
-                    <a href="#" class="dropdown__link link-reset">Ренуар3</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="menu-dropdown__item">
-              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Постимпрессионизм" aria-expanded="false">
-                <span class="menu-dropdown__text link-text">Постимпрессионизм</span>
-                <svg class="menu-dropdown__icon" width="12" height="7">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-              <div class="menu-dropdown__body dropdown">
-                <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item dropdown__item-vangogh">
-                    <a href="#" class="dropdown__link link-reset">Ван Гог</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-cezanne">
-                    <a href="#" class="dropdown__link link-reset">Сезанн</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-gauguin">
-                    <a href="#" class="dropdown__link link-reset">Гоген</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-sulfur">
-                    <a href="#" class="dropdown__link link-reset">Сёра</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="menu-dropdown__item">
-              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Авангард" aria-expanded="false">
-                <span class="menu-dropdown__text link-text">Авангард</span>
-                <svg class="menu-dropdown__icon" width="12" height="7">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-              <div class="menu-dropdown__body dropdown">
-                <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item dropdown__item-kandinsky">
-                    <a href="#" class="dropdown__link link-reset">Кандинский</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-marinetti">
-                    <a href="#" class="dropdown__link link-reset">Маринетти</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-malevich">
-                    <a href="#" class="dropdown__link link-reset">Малевич</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-picasso">
-                    <a href="#" class="dropdown__link link-reset">Пикассо</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="menu-dropdown__item">
-              <button class="menu-dropdown__btn btn-reset" aria-label="Открыть список художников направления Футуризм" aria-expanded="false">
-                <span class="menu-dropdown__text link-text">Футуризм</span>
-                <svg class="menu-dropdown__icon" width="12" height="7">
-                  <use xlink:href="img/sprite.svg#arrow"></use>
-                </svg>
-              </button>
-              <div class="menu-dropdown__body dropdown">
-                <ul class="dropdown__list list-reset" data-simplebar>
-                  <li class="dropdown__item dropdown__item-carra">
-                    <a href="#" class="dropdown__link link-reset">Карра</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-pratella">
-                    <a href="#" class="dropdown__link link-reset">Прателла</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-severini">
-                    <a href="#" class="dropdown__link link-reset">Северини</a>
-                  </li>
-                  <li class="dropdown__item dropdown__item-balla">
-                    <a href="#" class="dropdown__link link-reset">Балла</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
   </header>
   <main class="main">
     <section class="promo">

@@ -126,20 +126,20 @@ dropdownList.forEach(dropdown => {
 });
 
 // открыть\закрыть, отправить форму поиска
-let btnSearchOpen = document.querySelector('.searchbar__open');
-let formSearch = document.querySelector('.searchbar__form');
+let btnSearchOpen = document.querySelector('.header__searchbar-open');
+let formSearch = document.querySelector('.header__searchbar');
 let input = document.querySelector('.searchbar__field');
 let btnSearchClose = document.querySelector('.searchbar__close');
 
 btnSearchOpen.addEventListener('click', function() {
-  formSearch.classList.add('searchbar__form--open');
-  btnSearchOpen.classList.add('searchbar__open--active');
+  formSearch.classList.add('header__searchbar--visible');
+  btnSearchOpen.classList.add('is-active');
   btnSearchOpen.setAttribute('aria-expanded', true);
 });
 
 btnSearchClose.addEventListener('click', function() {
-  formSearch.classList.remove('searchbar__form--open');
-  btnSearchOpen.classList.remove('searchbar__open--active');
+  formSearch.classList.remove('header__searchbar--visible');
+  btnSearchOpen.classList.remove('is-active');
   btnSearchOpen.setAttribute('aria-expanded', false);
   input.value = '';
 });
