@@ -850,6 +850,9 @@
     margin-bottom: 15px;
   }
   /* events */
+  .events__slider {
+    overflow: inherit;
+  }
   .events__content {
     padding: 17px 23px 44px;
   }
