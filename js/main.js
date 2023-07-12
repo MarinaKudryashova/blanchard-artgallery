@@ -230,23 +230,22 @@ tabsBtn.forEach(function(btn) {
         behavior: 'smooth',
         block: 'start'
     });
-  } else {
-    let path =e.currentTarget.getAttribute('data-path');
-
-    tabsBtn.forEach(function(btn) {
-      btn.classList.remove('is-active');
-      btn.setAttribute("aria-expanded", false);
-      e.currentTarget.classList.add('is-active');
-      e.currentTarget.setAttribute("aria-expanded", true)
-    });
-
-    tabsItem.forEach(function(item) {
-      item.classList.remove('is-visible');
-      document.querySelector(`[data-target="${path}"]`).classList.add('is-visible');
-    });
-    painter.removeAttribute('data-target-id');
   }
+  let path =e.currentTarget.getAttribute('data-path');
+
+  tabsBtn.forEach(function(btn) {
+    btn.classList.remove('is-active');
+    btn.setAttribute("aria-expanded", false);
+    e.currentTarget.classList.add('is-active');
+    e.currentTarget.setAttribute("aria-expanded", true)
   });
+
+  tabsItem.forEach(function(item) {
+    item.classList.remove('is-visible');
+    document.querySelector(`[data-target="${path}"]`).classList.add('is-visible');
+  });
+  painter.removeAttribute('data-target-id');
+});
 });
 
 //  иницилизация tippy
