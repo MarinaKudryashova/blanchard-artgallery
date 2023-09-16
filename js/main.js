@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function(){
 // открыть\закрыть бургер-меню
 let burger = document.querySelector('.btn-burger');
 let menu = document.querySelector('.menu');
@@ -370,3 +371,4 @@ validation
 
    });
  };
+});

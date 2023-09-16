@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function(){
 // иницилизация slider-swiper
 const promoSlider = new Swiper(".promo-swiper", {
   loop: true,
@@ -172,4 +173,5 @@ const partnersSlider = new Swiper(".partners-slider", {
     lastSlideMessage: 'Это последний слайд',
     slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
   }
+});
 });

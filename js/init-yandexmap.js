@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function(){
 // иницилизация yandex карты
 let center = [55.75846806898367,37.60108849999989];
 function init() {
@@ -27,3 +28,4 @@ function init() {
 }
 
 ymaps.ready(init);
+});
