@@ -75,7 +75,6 @@ function(el) {
   menuBtn.forEach(btn => {
     btn.addEventListener('click', (e) => {
       let currentBtn = e.currentTarget;
-      console.log(currentBtn);
       let TextBtn = currentBtn.firstElementChild.textContent;
       let currentList = currentBtn.closest('.menu-dropdown__item').querySelector('.dropdown');
       let currentSimplebarContentWrapper = currentBtn.closest('.menu-dropdown__item').querySelector('.simplebar-content-wrapper');
