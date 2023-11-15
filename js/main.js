@@ -353,40 +353,6 @@ if (mQuery2.matches) {
     }
   });
 }
-// burger.addEventListener('click', function() {
-//   burger.classList.toggle('is-open');
-//   menu.classList.toggle('menu-open');
-//   if (burger.getAttribute('aria-label') === 'Открыть меню') {
-//     burger.setAttribute("aria-label", 'Закрыть меню');
-//     burger.setAttribute('aria-expanded', true);
-//     disableScroll();
-//   } else {
-//     burger.setAttribute("aria-label", 'Открыть меню');
-//     burger.setAttribute('aria-expanded', false);
-//     enableScroll();
-//   }
-// });
-
-// let menuClose = function() {
-//   burger.classList.remove('is-open');
-//   burger.setAttribute("aria-label", 'Открыть меню');
-//   burger.setAttribute('aria-expanded', false);
-//   menu.classList.remove('menu-open');
-//   enableScroll();
-// };
-
-// menuLink.forEach(function(e) {
-//   e.addEventListener('click', function() {
-//     menuClose();
-//   });
-// });
-// document.addEventListener('click',
-// function(el) {
-//   let target = el.target;
-//   if(!target.closest('.header__burger') && burger.classList.contains('is-open')) {
-//     menuClose();
-//   }
-// });
 
 // открыть\закрыть, отправить форму поиска
 let btnSearchOpen = document.querySelector('.header__searchbar-open');
@@ -394,18 +360,18 @@ let formSearch = document.querySelector('.header__searchbar');
 let input = document.querySelector('.searchbar__field');
 let btnSearchClose = document.querySelector('.searchbar__close');
 
-if (mQuery2.matches) {
-  btnSearchOpen.addEventListener('click', function() {
-    formSearch.classList.add('header__searchbar--visible');
-    btnSearchOpen.classList.add('is-active');
-    btnSearchOpen.setAttribute('aria-expanded', true);
-  });
+  if (mQuery2.matches) {
+    btnSearchOpen.addEventListener('click', function() {
+      formSearch.classList.add('header__searchbar--visible');
+      btnSearchOpen.classList.add('is-active');
+      btnSearchOpen.setAttribute('aria-expanded', true);
+    });
 
-  btnSearchClose.addEventListener('click', function() {
-    formSearch.classList.remove('header__searchbar--visible');
-    btnSearchOpen.classList.remove('is-active');
-    btnSearchOpen.setAttribute('aria-expanded', false);
-    input.value = '';
-  });
-}
+    btnSearchClose.addEventListener('click', function() {
+      formSearch.classList.remove('header__searchbar--visible');
+      btnSearchOpen.classList.remove('is-active');
+      btnSearchOpen.setAttribute('aria-expanded', false);
+      input.value = '';
+    });
+  }
 });
