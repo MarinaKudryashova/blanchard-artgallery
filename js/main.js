@@ -1,63 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){
-// открыть\закрыть бургер-меню
-let burger = document.querySelector('.btn-burger');
-let menu = document.querySelector('.menu');
-let menuLink = document.querySelectorAll('.menu__link');
-const body = document.body;
-
-let disableScroll = function() {
-  let paddingOffset = window.innerWidth - body.offsetWidth + 'px';
-  let paddingTop = window.scrollY;
-  body.dataset.position = paddingTop;
-  body.style.paddingRight = paddingOffset;
-  body.style.top = -paddingTop + 'px';
-  body.classList.add('disable-scroll');
-}
-
-let enableScroll = function() {
-  let paddingTop = parseInt(body.dataset.position, 10);
-  body.style.paddingRight = '0px';
-  body.style.top = 'auto';
-  body.classList.remove('disable-scroll');
-  window.scroll({top: paddingTop, left: 0});
-  body.removeAttribute('data-position');
-}
-
-burger.addEventListener('click', function() {
-  burger.classList.toggle('is-open');
-  menu.classList.toggle('menu-open');
-  if (burger.getAttribute('aria-label') === 'Открыть меню') {
-    burger.setAttribute("aria-label", 'Закрыть меню');
-    burger.setAttribute('aria-expanded', true);
-    disableScroll();
-  } else {
-    burger.setAttribute("aria-label", 'Открыть меню');
-    burger.setAttribute('aria-expanded', false);
-    enableScroll();
-  }
-});
-
-let menuClose = function() {
-  burger.classList.remove('is-open');
-  burger.setAttribute("aria-label", 'Открыть меню');
-  burger.setAttribute('aria-expanded', false);
-  menu.classList.remove('menu-open');
-  enableScroll();
-};
-
-menuLink.forEach(function(e) {
-  e.addEventListener('click', function() {
-    menuClose();
-  });
-});
-document.addEventListener('click',
-function(el) {
-  let target = el.target;
-  if(!target.closest('.header__burger') && burger.classList.contains('is-open')) {
-    menuClose();
-  }
-});
-
 // menu-dropdown
   const menuBtn = document.querySelectorAll('.menu-dropdown__btn');
   const dropList = document.querySelectorAll('.dropdown');
@@ -124,24 +65,6 @@ dropdownList.forEach(dropdown => {
   });
 });
 
-// открыть\закрыть, отправить форму поиска
-let btnSearchOpen = document.querySelector('.header__searchbar-open');
-let formSearch = document.querySelector('.header__searchbar');
-let input = document.querySelector('.searchbar__field');
-let btnSearchClose = document.querySelector('.searchbar__close');
-
-btnSearchOpen.addEventListener('click', function() {
-  formSearch.classList.add('header__searchbar--visible');
-  btnSearchOpen.classList.add('is-active');
-  btnSearchOpen.setAttribute('aria-expanded', true);
-});
-
-btnSearchClose.addEventListener('click', function() {
-  formSearch.classList.remove('header__searchbar--visible');
-  btnSearchOpen.classList.remove('is-active');
-  btnSearchOpen.setAttribute('aria-expanded', false);
-  input.value = '';
-});
 
 // иницилизация Choices
 const element = document.querySelector('.gallery__select');
@@ -153,182 +76,6 @@ const choices = new Choices(element, {
   classNames: {
     containerOuter: 'choices gallery__choices',
   },
-});
-
-// иницилизация slider-swiper
-const promoSlider = new Swiper(".promo-swiper", {
-  loop: true,
-  slideClass: 'promo-swiper__slide',
-  wrapperClass: 'promo-swiper__wrapper',
-  speed: 2000,
-  autoplay: {
-    delay: 2000,
-  },
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-});
-
-const gallerySlider = new Swiper(".gallery-swiper", {
-  slideClass: 'gallery-swiper__slide',
-  wrapperClass: 'gallery-swiper__wrapper',
-  navigation: {
-    nextEl: '.gallery-swiper__btn-next',
-    prevEl: '.gallery-swiper__btn-prev',
-  },
-  pagination: {
-    el: '.gallery-swiper__pagination',
-    type: 'fraction',
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 15,
-    },
-    // when window width is >= 567px
-    576: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 15,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 38,
-    },
-    // when window width is >= 992px
-    1024: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 34
-    },
-    // when window width is >= 992px
-    1200: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 50,
-    },
-  },
-
-  a11y: {
-    enabled: true,
-    prevSlideMessage: 'Предыдущий слайд',
-    nextSlideMessage: 'Следующий слайд',
-    firstSlideMessage: 'Это первый слайд',
-    lastSlideMessage: 'Это последний слайд',
-    slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
-  }
-});
-
-const eventsSlider = new Swiper(".events-slider", {
-  slideClass: 'events-slider__slide',
-  wrapperClass: 'events-slider__wrapper',
-  navigation: {
-    nextEl: '.events-slider__btn-next',
-    prevEl: '.events-slider__btn-prev',
-  },
-  pagination: {
-    el: '.events-slider__pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 15,
-    },
-    // when window width is >= 567px
-    576: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 15,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 34,
-    },
-    // when window width is >= 992px
-    1024: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 27,
-    },
-    // when window width is >= 992px
-    1201: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 50,
-    },
-  },
-
-  a11y: {
-    enabled: true,
-    paginationBulletMessage: 	'Перейти к слайду {{index}}',
-    prevSlideMessage: 'Предыдущий слайд',
-    nextSlideMessage: 'Следующий слайд',
-    firstSlideMessage: 'Это первый слайд',
-    lastSlideMessage: 'Это последний слайд',
-    // slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
-    slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
-  }
-});
-const partnersSlider = new Swiper(".partners-slider", {
-  slideClass: 'partners-slider__slide',
-  wrapperClass: 'partners-slider__wrapper',
-  navigation: {
-    nextEl: '.partners__btn-next',
-    prevEl: '.partners__btn-prev',
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      spaceBetween: 15,
-    },
-    // when window width is >= 576px
-    576: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 15,
-    },
-    // when window width is >= 768px
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 34,
-    },
-    // when window width is >= 992px
-    1024: {
-      slidesPerView: 2,
-      slidesPerGroup: 2,
-      spaceBetween: 50,
-    },
-    // when window width is >= 992px
-    1201: {
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 50,
-    },
-  },
-
-  a11y: {
-    enabled: true,
-
-
-    prevSlideMessage: 'Предыдущий слайд',
-    nextSlideMessage: 'Следующий слайд',
-    firstSlideMessage: 'Это первый слайд',
-    lastSlideMessage: 'Это последний слайд',
-    slideLabelMessage: 'Слайд {{index}} из {{slidesLength}}',
-  }
 });
 
 // modal-windows
@@ -531,35 +278,6 @@ validation
 
    event.target.reset();
  });
-// иницилизация yandex карты
-let center = [55.75846806898367,37.60108849999989];
-function init() {
-    let map = new ymaps.Map('contacts__map', {
-        center: center,
-        zoom: 16,
-    },
-    {
-      zoomControlPosition: {right: 25, top: 300,},
-      geolocationControlPosition: {right: 25, top: 250,},
-    });
-
-    let placemark = new ymaps.Placemark(center, {}, {
-      iconLayout: 'default#image',
-      iconImageHref: './img/mapicon.svg',
-      iconImageSize: [20, 20],
-      iconImageOffset: [-10, -10],
-    });
-
-    map.controls.remove('searchControl');
-    map.controls.remove('trafficControl');
-    map.controls.remove('typeSelector');
-    map.controls.remove('fullscreenControl');
-    map.controls.remove('rulerControl');
-    map.behaviors.disable(['scrollZoom']);
-    map.geoObjects.add(placemark);
-}
-
-ymaps.ready(init);
 
  // плавный скролл по якорям
  const smoothLinks = document.querySelectorAll('a[href^="#"]');
@@ -574,4 +292,120 @@ ymaps.ready(init);
 
    });
  };
+
+
+// открыть\закрыть бургер-меню
+let burger = document.querySelector('.btn-burger');
+let menu = document.querySelector('.menu');
+let menuLink = document.querySelectorAll('.menu__link');
+const body = document.body;
+const mQuery2 = window.matchMedia('(max-width: 1200px)');
+
+
+let disableScroll = function() {
+  let paddingOffset = window.innerWidth - body.offsetWidth + 'px';
+  let paddingTop = window.scrollY;
+  body.dataset.position = paddingTop;
+  body.style.paddingRight = paddingOffset;
+  body.style.top = -paddingTop + 'px';
+  body.classList.add('disable-scroll');
+}
+
+let enableScroll = function() {
+  let paddingTop = parseInt(body.dataset.position, 10);
+  body.style.paddingRight = '0px';
+  body.style.top = 'auto';
+  body.classList.remove('disable-scroll');
+  window.scroll({top: paddingTop, left: 0});
+  body.removeAttribute('data-position');
+}
+if (mQuery2.matches) {
+  burger.addEventListener('click', function() {
+    burger.classList.toggle('is-open');
+    menu.classList.toggle('menu-open');
+    if (burger.getAttribute('aria-label') === 'Открыть меню') {
+      burger.setAttribute("aria-label", 'Закрыть меню');
+      burger.setAttribute('aria-expanded', true);
+      disableScroll();
+    } else {
+      burger.setAttribute("aria-label", 'Открыть меню');
+      burger.setAttribute('aria-expanded', false);
+      enableScroll();
+    }
+  });
+  let menuClose = function() {
+    burger.classList.remove('is-open');
+    burger.setAttribute("aria-label", 'Открыть меню');
+    burger.setAttribute('aria-expanded', false);
+    menu.classList.remove('menu-open');
+    enableScroll();
+  };
+  menuLink.forEach(function(e) {
+    e.addEventListener('click', function() {
+      menuClose();
+    });
+  });
+  document.addEventListener('click',
+  function(el) {
+    let target = el.target;
+    if(!target.closest('.header__burger') && burger.classList.contains('is-open')) {
+      menuClose();
+    }
+  });
+}
+// burger.addEventListener('click', function() {
+//   burger.classList.toggle('is-open');
+//   menu.classList.toggle('menu-open');
+//   if (burger.getAttribute('aria-label') === 'Открыть меню') {
+//     burger.setAttribute("aria-label", 'Закрыть меню');
+//     burger.setAttribute('aria-expanded', true);
+//     disableScroll();
+//   } else {
+//     burger.setAttribute("aria-label", 'Открыть меню');
+//     burger.setAttribute('aria-expanded', false);
+//     enableScroll();
+//   }
+// });
+
+// let menuClose = function() {
+//   burger.classList.remove('is-open');
+//   burger.setAttribute("aria-label", 'Открыть меню');
+//   burger.setAttribute('aria-expanded', false);
+//   menu.classList.remove('menu-open');
+//   enableScroll();
+// };
+
+// menuLink.forEach(function(e) {
+//   e.addEventListener('click', function() {
+//     menuClose();
+//   });
+// });
+// document.addEventListener('click',
+// function(el) {
+//   let target = el.target;
+//   if(!target.closest('.header__burger') && burger.classList.contains('is-open')) {
+//     menuClose();
+//   }
+// });
+
+// открыть\закрыть, отправить форму поиска
+let btnSearchOpen = document.querySelector('.header__searchbar-open');
+let formSearch = document.querySelector('.header__searchbar');
+let input = document.querySelector('.searchbar__field');
+let btnSearchClose = document.querySelector('.searchbar__close');
+
+if (mQuery2.matches) {
+  btnSearchOpen.addEventListener('click', function() {
+    formSearch.classList.add('header__searchbar--visible');
+    btnSearchOpen.classList.add('is-active');
+    btnSearchOpen.setAttribute('aria-expanded', true);
+  });
+
+  btnSearchClose.addEventListener('click', function() {
+    formSearch.classList.remove('header__searchbar--visible');
+    btnSearchOpen.classList.remove('is-active');
+    btnSearchOpen.setAttribute('aria-expanded', false);
+    input.value = '';
+  });
+}
 });
